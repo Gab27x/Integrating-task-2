@@ -134,10 +134,18 @@ public class Controller {
     }
 
     // Case 5
-    public void changeStage(){
+    public String changeStage(String searchProjectByName){
+        int pos = searchProjectPosition(searchProjectByName);
+        String msg="";
+        if (pos!= -1){
+            msg= projects[pos].changeStage();
+        }
+        else{
+            msg = "project has not been Found";
+        }
 
-
-        
+        return msg ;
+          
     }
 
 

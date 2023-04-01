@@ -26,6 +26,7 @@ public class Stage{
     private Calendar realFinalDate;
     private boolean isActive;
     
+    
 
     public Stage(String name, boolean isActive,Calendar planedInitialDate,Calendar planedFinalDate ){
         this.name = name;
@@ -38,6 +39,15 @@ public class Stage{
 
 
     // getters and setters
+
+    public int getStage() {
+        return this.stage;
+    }
+
+    public void setStage(int stage) {
+        this.stage = stage;
+
+    }
 
     public String getName() {
         return this.name;

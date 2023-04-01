@@ -308,8 +308,10 @@ public class Main {
 
     // Case 5
     public void changeStage(){
-
-
+    
+        System.out.println("\nEnter project name");
+        String searchProjectByName = input.next();
+        controller.changeStage(searchProjectByName);
         
     }
 

@@ -64,6 +64,8 @@ public class Project {
 
     
     // get
+
+
     public String getProjectName() {
         return this.projectName;
     }
@@ -175,4 +177,33 @@ public class Project {
     
     
         }
+        
+    // Case 5
+    public String changeStage(){
+        String msg ="";
+        int pos = activeStagePos();
+        int newPos = pos+1;
+        Calendar date = Calendar.getInstance();
+        if (pos != -1 && pos > 6 ){
+
+            stages[pos].setRealFinalDate(date);
+            stages[pos].setIsActive(false);
+
+            stages[newPos].setRealInitialDate(date);
+            stages[newPos].setIsActive(true);
+            msg ="The new active stage is " + stages[newPos].getName();
+
+        }
+        else if(pos == 6){
+            stages[pos].setRealFinalDate(date);
+            stages[pos].setIsActive(false);
+            msg ="The project is over all the stages of the project have been completed";
+
+        }
+        return msg;
+        
+    }
+
+
+
 }
