@@ -26,6 +26,7 @@ public class Main {
                 option= view.input.nextInt();
             }while( !(option >= 0 && option<=6) );
 
+            view.executeOption(option);
 
         }while(option != 0);
 
@@ -48,7 +49,65 @@ public class Main {
 
     }
     // executeOption 
+    public void executeOption(int option){
+		switch(option){
+			case 0:
+			    System.out.println("Exit");
+				break;
+			case 1:
+                createProject();
+				break;
+			case 2:
+                registerCapsule();
+				break;
+			case 3:
+			    approvecapsule();
+				break;
+            case 4:
+                publishCapsule();
+				break;
+            case 5:
+                changeStage();
+				break;
+		}
 
+	}
+
+    // Case 1
+    public void createProject(){
+
+
+        
+    }
+
+    // Case 2
+    public void registerCapsule(){
+
+
+        
+    }
+
+    // Case 3
+    public void approvecapsule(){
+
+
+        
+    }
+
+    // Case 4
+
+    public void publishCapsule(){
+
+
+        
+    }
+
+    // Case 5
+    public void changeStage(){
+
+
+        
+    }
 
 
 
@@ -71,7 +130,6 @@ public class Main {
         return newDate;
     
     }
-
 
 
     // change date format
