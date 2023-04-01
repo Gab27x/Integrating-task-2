@@ -148,9 +148,6 @@ public class Main {
         String managerNumberC= input.next();
 
 
-
-
-
         controller.createProject(projectName, clientName, initialDate, finalDate, budget,
         managerNameG, managerNumberG,  managerNameC, managerNumberC,
         planedInitialDate0 , planedFinalDate0
@@ -166,6 +163,7 @@ public class Main {
     }
 
     // Case 2
+    // add next line in long strings be carefull
     public void registerCapsule(){
         System.out.println("\nEnter project name");
         String searchProjectByName = input.next();
@@ -196,6 +194,56 @@ public class Main {
 
     // Case 3
     public void approvecapsule(){
+        int option = 0;
+        System.out.println("\nEnter project name");
+        String searchProjectByName = input.next();
+
+        do{
+            System.out.println("\n Select stage by name\n" +
+            "1. start \n"+
+            "2. analysis\n"+
+            "3. design\n"+
+            "4. execution\n"+
+            "5. closure\n"+
+            "6. project control\n");
+            option= input.nextInt();
+        }while( !(option>0 && option<=6) );
+
+        String searchStageByName ="";
+
+        switch(option){
+
+            case 1:
+            searchStageByName = "start"  ;
+            break;
+
+            case 2:
+            searchStageByName = "analysis" ;
+            break;
+
+            case 3:
+            searchStageByName =  "design" ;
+            break;
+
+            case 4:
+            searchStageByName =  "execution" ;
+            break;
+
+            case 5:
+            searchStageByName =   "closure ";
+            break;
+
+            case 6:
+            searchStageByName =  "project control";
+            break;
+
+        }
+
+
+        System.out.println("\nEnter Capsule id");
+        int id = input.nextInt();
+
+        controller.approveCapsule(searchProjectByName, searchStageByName, id);
 
 
         

@@ -115,7 +115,7 @@ public class Project {
 
         return pos;
    }
-
+    // case 2
    public String registerCapsule(int id,String capsuleDescription,String type ,
    String colabName, String colabPosition, String lectionLearned){
         int pos = activeStagePos();
@@ -131,6 +131,29 @@ public class Project {
         
 
         return msg;
+
+    }
+    // case 3
+    public String approveCapsule(String searchStageByName,int id){
+
+        int pos= activeStagePos();
+        String msg = "";
+
+        if (pos!= -1 && stages[pos].getName().equalsIgnoreCase(searchStageByName)){
+
+            stages[pos].approveCapsule(id);
+            
+
+   
+        }
+        else{
+            msg= "Capsule not found";
+        }
+
+
+    
+
+        return msg; 
 
     }
     

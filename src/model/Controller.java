@@ -100,10 +100,20 @@ public class Controller {
     }
 
     // Case 3
-    public void approvecapsule(){
+    public String approveCapsule(String searchProjectByName, String searchStageByName,int id){
 
+        int pos =searchProjectPosition(searchProjectByName);
+        String msg = "";
 
-        
+        if (pos!= -1){
+            msg= projects[pos].approveCapsule( searchStageByName, id);
+        }
+        else{
+            msg = "project has not been Found";
+        }
+
+        return msg; 
+
     }
 
     // Case 4

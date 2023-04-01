@@ -129,6 +129,31 @@ public class Stage{
         return msg;
 
     }
+    // case 3
+    public String approveCapsule(int id){
+
+        boolean idFounded= false;
+        String msg = "";
+
+
+        for(int i =0; i<NUM_CAPSULS && !idFounded ;i++){
+            if (capsules[i]!= null && capsules[i].getId() == id ){
+                capsules[i].setApproveCapsule(true);
+                msg = "capsule approved";
+            }
+            else{
+
+                msg="Id does not match";
+            }
+
+
+        }
+            
+        return msg;
+   
+        }
+
+
 
 
 }
