@@ -108,7 +108,7 @@ public class Project {
         boolean activeStagefounded = false;
         for(int i=0;i<NUM_STAGES && !activeStagefounded;i++){
             if(stages[i].getIsActive() && stages[i] != null ){
-
+                activeStagefounded = true;
                 pos=i;
 
             }
@@ -184,14 +184,14 @@ public class Project {
         int pos = activeStagePos();
         int newPos = pos+1;
         Calendar date = Calendar.getInstance();
-        if (pos != -1 && pos > 6 ){
+        if (pos>=0 && pos<6 ){
 
             stages[pos].setRealFinalDate(date);
             stages[pos].setIsActive(false);
 
             stages[newPos].setRealInitialDate(date);
             stages[newPos].setIsActive(true);
-            msg ="The new active stage is " + stages[newPos].getName();
+            msg = "The new active stage is " + stages[newPos].getName();
 
         }
         else if(pos == 6){
@@ -199,6 +199,9 @@ public class Project {
             stages[pos].setIsActive(false);
             msg ="The project is over all the stages of the project have been completed";
 
+        }
+        else if (pos == -1){
+            msg="dgh";
         }
         return msg;
         
