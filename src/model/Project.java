@@ -29,6 +29,7 @@ Un proyecto de un cliente se debe almacenar:
     private String managerNameC;
     private String managerNumberC;
 
+    private Stage stage;
 
 
 

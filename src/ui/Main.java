@@ -75,8 +75,37 @@ public class Main {
 
     // Case 1
     public void createProject(){
+        System.out.println("Enter project name");
+        String projectName = input.next();
+        
+        System.out.println("Enter project name");
+        String clientName= input.next();
+
+        System.out.println("Enter project name");
+        Calendar initialDate = createdate();
+
+        System.out.println("Enter project name");
+        Calendar finalDate= createdate();;
+
+        System.out.println("Enter project name");
+        double budget= input.nextDouble();
+
+        System.out.println("Enter project name");
+        String managerNameG = input.next();
+
+        System.out.println("Enter project name");
+        String managerNumberG = input.next();
+
+        System.out.println("Enter project name");
+        String managerNameC= input.next();
+
+        System.out.println("Enter project name");
+        String managerNumberC= input.next();
 
 
+
+        controller.createProject(projectName,clientName,initialDate,finalDate,
+        budget,managerNameG,managerNumberG,managerNameC,managerNumberC);
         
     }
 

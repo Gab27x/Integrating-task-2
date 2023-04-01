@@ -18,7 +18,10 @@ public class Controller {
         String msg = "Couldn't create the project";
         int pos = posAvailable();
         if(pos != -1){
-			//projects[pos] = new Project() ;
+			projects[pos] = new Project(projectName,clientName,initialDate,finalDate,
+            budget,managerNameG,managerNumberG,managerNameC,managerNumberC) ;
+
+
 			
 			msg = "Project created";
 		}
@@ -26,7 +29,8 @@ public class Controller {
         return msg;
     }
 
-    
+
+
 	public int posAvailable(){
 		int pos = -1;
 		boolean posFounded = false;
