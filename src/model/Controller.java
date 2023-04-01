@@ -60,10 +60,40 @@ public class Controller {
 
 
     // Case 2
-    public void registerCapsule(){
+    public String registerCapsule(String searchProjectPosition){
+        int pos =searchProjectPosition(searchProjectPosition);
+        String msg = "";
+        if (pos!= -1){
 
+            msg = projects[pos].registerCapsule();
+        }
+        else{
+            msg = "project has not been Found";
+        }
+
+
+
+        return msg; 
+   
 
         
+    }
+    // search project position
+
+    public int searchProjectPosition(String searchProjectByName){
+        int pos=-1;
+        boolean projectFound = false;
+        for(int i=0; i<SIZE && !projectFound;i++){
+            if(projects[i].getProjectName().equalsIgnoreCase(searchProjectByName) && projects[i]!= null ){
+                projectFound = true;
+                pos=i;
+
+
+            }
+
+        }
+        return pos;
+
     }
 
     // Case 3

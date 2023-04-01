@@ -115,6 +115,22 @@ public class Project {
 
         return pos;
    }
+
+   public String registerCapsule(){
+        int pos = activeStagePos();
+        String msg="";
+
+        if(pos != -1){
+            msg= stages[pos].registerCapsule();
+        }
+        else{
+            msg="there aren not stages activated";
+        }
+        
+
+        return msg;
+
+    }
     
     
 }

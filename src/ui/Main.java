@@ -167,9 +167,12 @@ public class Main {
 
     // Case 2
     public void registerCapsule(){
+        System.out.println("Enter project name");
+        String searchProjectByName = input.next();
 
-
+        System.out.println(controller.registerCapsule(searchProjectByName));
         
+
     }
 
     // Case 3

@@ -5,7 +5,7 @@ import java.util.Calendar;
 
 public class Stage{
     public static final int NUM_CAPSULS = 50;
-    private Capsul[] capsuls;
+    private Capsul[] capsules;
     /*
     Cuando se crea el proyecto, automáticamente se crean sus 6 etapas:
     1.	inicio
@@ -30,7 +30,7 @@ public class Stage{
     public Stage(String name, boolean isActive,Calendar planedInitialDate,Calendar planedFinalDate ){
         this.name = name;
         this.isActive = isActive;
-        capsuls = new Capsul[NUM_CAPSULS];
+        capsules = new Capsul[NUM_CAPSULS];
 
     }
 
@@ -95,7 +95,7 @@ public class Stage{
 		boolean posFounded = false;
 
 		for (int i=0;i <NUM_CAPSULS && !posFounded; i++){
-			if (capsuls[i] == null){
+			if (capsules[i] == null){
 
 				pos = i;
 				posFounded = true;
@@ -105,6 +105,26 @@ public class Stage{
 
 		return pos;
 	}
+
+    public String registerCapsule(){
+        int pos = capsuleAvailable();
+
+        String msg="";
+        
+        if (pos != -1){
+
+
+        }
+        else{
+
+            msg="";
+        }
+        
+
+
+        return msg;
+
+    }
 
 
 }

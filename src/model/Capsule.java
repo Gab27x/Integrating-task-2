@@ -1,6 +1,6 @@
 package model;
 
-public class Capsul {
+public class Capsule {
     /*
     Una cápsula tiene:
 
@@ -26,7 +26,7 @@ public class Capsul {
     private String lectionLearned;
 
 
-    public Capsul(int id, String capsulDescription, String type, String colabName, String colabPosition,
+    public Capsule(int id, String capsulDescription, String type, String colabName, String colabPosition,
      String lectionLearned) {
 
         this.id = id;
