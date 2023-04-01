@@ -33,7 +33,13 @@ public class Project {
 
 
     public Project(String projectName,String clientName,Calendar initialDate,Calendar finalDate,double budget,
-    String managerNameG,String managerNumberG, String managerNameC,String managerNumberC){
+    String managerNameG,String managerNumberG, String managerNameC,String managerNumberC,
+    Calendar planedInitialDate0 ,Calendar planedFinalDate0
+    ,Calendar planedInitialDate1 ,Calendar planedFinalDate1
+    ,Calendar planedInitialDate2 ,Calendar planedFinalDate2
+    ,Calendar planedInitialDate3 ,Calendar planedFinalDate3
+    ,Calendar planedInitialDate4 ,Calendar planedFinalDate4
+    ,Calendar planedInitialDate5 ,Calendar planedFinalDate5){
 
         this.projectName = projectName;	
 		this.clientName = clientName;
@@ -45,12 +51,14 @@ public class Project {
         this.managerNameC = managerNameC;
         this.managerNumberC = managerNumberC; 
 
-        this.stages[0] = new Stage("start", true );
-        this.stages[1] = new Stage("analysis", false );
-        this.stages[2] = new Stage("design", false);
-        this.stages[3] = new Stage("execution", false);
-        this.stages[4] = new Stage("closure ", false);
-        this.stages[5] = new Stage("project control", false);
+          
+
+        this.stages[0] = new Stage("start", true, planedInitialDate0 , planedFinalDate0 );
+        this.stages[1] = new Stage("analysis", false   , planedInitialDate1 , planedFinalDate1 );
+        this.stages[2] = new Stage("design", false, planedInitialDate2 , planedFinalDate2);
+        this.stages[3] = new Stage("execution", false  , planedInitialDate3 , planedFinalDate3);
+        this.stages[4] = new Stage("closure ", false, planedInitialDate4 , planedFinalDate4);
+        this.stages[5] = new Stage("project control", false , planedInitialDate5 , planedFinalDate5 );
 
     }
 

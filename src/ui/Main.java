@@ -87,31 +87,45 @@ public class Main {
 
         // calculate planned dates
 
-        Calendar date = Calendar.getInstance() ;
+        Calendar date = initialDate ;
     
         System.out.println("Enter start stage duration (months)");
         int stageDurationInMonths0 = input.nextInt();
 
+        Calendar planedInitialDate0 = initialDate;
+        Calendar planedFinalDate0 = addMonths(date, stageDurationInMonths0);
+
         System.out.println("Enter analysis stage duration (months)");
         int stageDurationInMonths1  = input.nextInt();
+        Calendar planedInitialDate1 = planedFinalDate0;
+        Calendar planedFinalDate1 = addMonths(date, stageDurationInMonths1);
+
 
         System.out.println("Enter design stage duration (months)");
         int stageDurationInMonths2  = input.nextInt();
+        Calendar planedInitialDate2 = planedFinalDate1;
+        Calendar planedFinalDate2 = addMonths(date, stageDurationInMonths2);
+
 
         System.out.println("Enter execution stage duration (months)");
         int stageDurationInMonths3 = input.nextInt();
+        Calendar planedInitialDate3 = planedFinalDate2;
+        Calendar planedFinalDate3 = addMonths(date, stageDurationInMonths3);
+
 
         System.out.println("Enter closure  stage duration (months)");
         int stageDurationInMonths4 = input.nextInt();
+        Calendar planedInitialDate4 = planedFinalDate3;
+        Calendar planedFinalDate4= addMonths(date, stageDurationInMonths4);
+
 
         System.out.println("Enter  project control stage duration (months)");
         int stageDurationInMonths5 = input.nextInt();
 
-        int totalDuration = stageDurationInMonths0 + stageDurationInMonths1 + stageDurationInMonths2 + stageDurationInMonths3
-        + stageDurationInMonths4 + stageDurationInMonths5 ;
+        Calendar planedInitialDate5 = planedFinalDate4;
+        Calendar planedFinalDate5 = addMonths(date, stageDurationInMonths5);
 
-        //System.out.println("Enter project name");
-        Calendar finalDate= createdate();
+        Calendar finalDate = planedFinalDate5;
 
         System.out.println("Enter project name");
         double budget= input.nextDouble();
@@ -133,7 +147,14 @@ public class Main {
 
 
         controller.createProject(projectName, clientName, initialDate, finalDate, budget,
-        managerNameG, managerNumberG,  managerNameC, managerNumberC);
+        managerNameG, managerNumberG,  managerNameC, managerNumberC,
+        planedInitialDate0 , planedFinalDate0
+        , planedInitialDate1 , planedFinalDate1
+        , planedInitialDate2 , planedFinalDate2
+        , planedInitialDate3 , planedFinalDate3
+        , planedInitialDate4 , planedFinalDate4
+        , planedInitialDate5 , planedFinalDate5
+        );
         
 
         
@@ -198,7 +219,7 @@ public class Main {
 		return formatDate;
 
 	}
-    public Calendar addMonthsCalendar(Calendar date, int months){
+    public Calendar addMonths(Calendar date, int months){
 		
 		date.add(Calendar.MONTH, months); 
 

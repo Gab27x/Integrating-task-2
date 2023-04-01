@@ -29,7 +29,7 @@ public class Stage{
     private boolean isActive;
     
 
-    public Stage(String name, boolean isActive ){
+    public Stage(String name, boolean isActive,Calendar planedInitialDate,Calendar planedFinalDate ){
         this.name = name;
         this.isActive = isActive;
         capsuls = new Capsul[NUM_CAPSULS];
