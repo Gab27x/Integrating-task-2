@@ -15,9 +15,10 @@ Un proyecto de un cliente se debe almacenar:
 
 
 
+
 */
     //attributes
-    
+
     private String projectName;
     private String clientName;
     private Calendar initialDate;
