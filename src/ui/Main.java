@@ -75,6 +75,7 @@ public class Main {
 
     // Case 1
     public void createProject(){
+
         System.out.println("Enter project name");
         String projectName = input.next();
         
@@ -84,6 +85,10 @@ public class Main {
         System.out.println("Enter initial date");
         Calendar initialDate = createdate();
 
+        // calculate planned dates
+
+        Calendar date = Calendar.getInstance() ;
+    
         System.out.println("Enter start stage duration (months)");
         int stageDurationInMonths0 = input.nextInt();
 
@@ -104,8 +109,9 @@ public class Main {
 
         int totalDuration = stageDurationInMonths0 + stageDurationInMonths1 + stageDurationInMonths2 + stageDurationInMonths3
         + stageDurationInMonths4 + stageDurationInMonths5 ;
+
         //System.out.println("Enter project name");
-        //Calendar finalDate= createdate();
+        Calendar finalDate= createdate();
 
         System.out.println("Enter project name");
         double budget= input.nextDouble();
@@ -126,9 +132,8 @@ public class Main {
 
 
 
-        controller.createProject(projectName,clientName,initialDate,finalDate,
-        budget,managerNameG,managerNumberG,managerNameC,managerNumberC,stageDurationInMonths0, stageDurationInMonths1
-        ,stageDurationInMonths2,stageDurationInMonths3,stageDurationInMonths4,stageDurationInMonths5);
+        controller.createProject(projectName, clientName, initialDate, finalDate, budget,
+        managerNameG, managerNumberG,  managerNameC, managerNumberC);
         
 
         
@@ -191,6 +196,13 @@ public class Main {
 
 		String formatDate = simpleDateFormat.format(date.getTime()) ;
 		return formatDate;
+
+	}
+    public Calendar addMonthsCalendar(Calendar date, int months){
+		
+		date.add(Calendar.MONTH, months); 
+
+		return date;
 
 	}
 

@@ -27,13 +27,11 @@ public class Stage{
     private Calendar realInitialDate;
     private Calendar realFinalDate;
     private boolean isActive;
-    private int stageDurationInMonths;
     
 
-    public Stage(String name, boolean isActive, int stageDurationInMonths){
+    public Stage(String name, boolean isActive ){
         this.name = name;
         this.isActive = isActive;
-        this.stageDurationInMonths=stageDurationInMonths;
         capsuls = new Capsul[NUM_CAPSULS];
 
     }

@@ -33,8 +33,7 @@ public class Project {
 
 
     public Project(String projectName,String clientName,Calendar initialDate,Calendar finalDate,double budget,
-    String managerNameG,String managerNumberG, String managerNameC,String managerNumberC,int stageDurationInMonths0,int stageDurationInMonths1,
-    int stageDurationInMonths2,int stageDurationInMonths3,int stageDurationInMonths4,int stageDurationInMonths5){
+    String managerNameG,String managerNumberG, String managerNameC,String managerNumberC){
 
         this.projectName = projectName;	
 		this.clientName = clientName;
@@ -46,12 +45,12 @@ public class Project {
         this.managerNameC = managerNameC;
         this.managerNumberC = managerNumberC; 
 
-        this.stages[0] = new Stage("start", true, );
-        this.stages[1] = new Stage("analysis", false, );
-        this.stages[2] = new Stage("design", false, );
-        this.stages[3] = new Stage("execution", false, );
-        this.stages[4] = new Stage("closure ", false, );
-        this.stages[5] = new Stage("project control", false, );
+        this.stages[0] = new Stage("start", true );
+        this.stages[1] = new Stage("analysis", false );
+        this.stages[2] = new Stage("design", false);
+        this.stages[3] = new Stage("execution", false);
+        this.stages[4] = new Stage("closure ", false);
+        this.stages[5] = new Stage("project control", false);
 
     }
 
