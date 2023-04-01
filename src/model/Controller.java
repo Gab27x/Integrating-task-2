@@ -14,13 +14,16 @@ public class Controller {
 
     // Case 1
     public String createProject(String projectName,String clientName,Calendar initialDate,Calendar finalDate,double budget,
-    String managerNameG,String managerNumberG, String managerNameC,String managerNumberC ){
+    String managerNameG,String managerNumberG, String managerNameC,String managerNumberC,int stageDurationInMonths0,int stageDurationInMonths1,
+    int stageDurationInMonths2,int stageDurationInMonths3,int stageDurationInMonths4,int stageDurationInMonths5){
         String msg = "Couldn't create the project";
         int pos = posAvailable();
         if(pos != -1){
             
 			projects[pos] = new Project(projectName,clientName,initialDate,finalDate,
-            budget,managerNameG,managerNumberG,managerNameC,managerNumberC) ;
+            budget,managerNameG,managerNumberG,managerNameC,managerNumberC, stageDurationInMonths0, stageDurationInMonths1
+            ,stageDurationInMonths2,stageDurationInMonths3,stageDurationInMonths4,stageDurationInMonths5) ;
+
 			msg = "Project created";
 		}
 

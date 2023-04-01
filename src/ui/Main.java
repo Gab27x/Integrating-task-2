@@ -78,14 +78,34 @@ public class Main {
         System.out.println("Enter project name");
         String projectName = input.next();
         
-        System.out.println("Enter project name");
+        System.out.println("Enter client name");
         String clientName= input.next();
 
-        System.out.println("Enter project name");
+        System.out.println("Enter initial date");
         Calendar initialDate = createdate();
 
-        System.out.println("Enter project name");
-        Calendar finalDate= createdate();;
+        System.out.println("Enter start stage duration (months)");
+        int stageDurationInMonths0 = input.nextInt();
+
+        System.out.println("Enter analysis stage duration (months)");
+        int stageDurationInMonths1  = input.nextInt();
+
+        System.out.println("Enter design stage duration (months)");
+        int stageDurationInMonths2  = input.nextInt();
+
+        System.out.println("Enter execution stage duration (months)");
+        int stageDurationInMonths3 = input.nextInt();
+
+        System.out.println("Enter closure  stage duration (months)");
+        int stageDurationInMonths4 = input.nextInt();
+
+        System.out.println("Enter  project control stage duration (months)");
+        int stageDurationInMonths5 = input.nextInt();
+
+        int totalDuration = stageDurationInMonths0 + stageDurationInMonths1 + stageDurationInMonths2 + stageDurationInMonths3
+        + stageDurationInMonths4 + stageDurationInMonths5 ;
+        //System.out.println("Enter project name");
+        //Calendar finalDate= createdate();
 
         System.out.println("Enter project name");
         double budget= input.nextDouble();
@@ -104,8 +124,13 @@ public class Main {
 
 
 
+
+
         controller.createProject(projectName,clientName,initialDate,finalDate,
-        budget,managerNameG,managerNumberG,managerNameC,managerNumberC);
+        budget,managerNameG,managerNumberG,managerNameC,managerNumberC,stageDurationInMonths0, stageDurationInMonths1
+        ,stageDurationInMonths2,stageDurationInMonths3,stageDurationInMonths4,stageDurationInMonths5);
+        
+
         
     }
 

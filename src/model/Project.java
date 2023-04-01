@@ -33,7 +33,8 @@ public class Project {
 
 
     public Project(String projectName,String clientName,Calendar initialDate,Calendar finalDate,double budget,
-    String managerNameG,String managerNumberG, String managerNameC,String managerNumberC ){
+    String managerNameG,String managerNumberG, String managerNameC,String managerNumberC,int stageDurationInMonths0,int stageDurationInMonths1,
+    int stageDurationInMonths2,int stageDurationInMonths3,int stageDurationInMonths4,int stageDurationInMonths5){
 
         this.projectName = projectName;	
 		this.clientName = clientName;
@@ -45,12 +46,13 @@ public class Project {
         this.managerNameC = managerNameC;
         this.managerNumberC = managerNumberC; 
 
-        this.stages[0] = new Stage("");
-        this.stages[1] = new Stage("");
-        this.stages[2] = new Stage("");
-        this.stages[3] = new Stage("");
-        this.stages[4] = new Stage("");
-        this.stages[5] = new Stage("");
+        this.stages[0] = new Stage("start", true, );
+        this.stages[1] = new Stage("analysis", false, );
+        this.stages[2] = new Stage("design", false, );
+        this.stages[3] = new Stage("execution", false, );
+        this.stages[4] = new Stage("closure ", false, );
+        this.stages[5] = new Stage("project control", false, );
+
     }
 
     
@@ -91,6 +93,21 @@ public class Project {
         return this.managerNumberC;
     }
 
+   // localice active stage
+    public int activeStagePos(){
+        int pos = -1;
+        boolean activeStagefounded = false;
+        for(int i=0;i<NUM_STAGES && !activeStagefounded;i++){
+            if(stages[i].getIsActive() && stages[i] != null ){
+
+                pos=i;
+
+            }
+            
+        }
+
+        return pos;
+   }
     
     
 }
