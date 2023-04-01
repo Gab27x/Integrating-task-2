@@ -167,10 +167,29 @@ public class Main {
 
     // Case 2
     public void registerCapsule(){
-        System.out.println("Enter project name");
+        System.out.println("\nEnter project name");
         String searchProjectByName = input.next();
 
-        System.out.println(controller.registerCapsule(searchProjectByName));
+        System.out.println("\nEnter a capsule id (must be unique)");
+        int id = input.nextInt();
+
+        System.out.println("\nEnter project name");
+        String capsuleDescription = input.next();
+
+        System.out.println("\nEnter project name");
+        String type = input.next();
+        
+        System.out.println("\nEnter project name");
+        String colabName = input.next();
+        
+        System.out.println("\nEnter project name");
+        String colabPosition = input.next();
+        
+        System.out.println("\nEnter project name");
+        String lectionLearned = input.next();
+
+        System.out.println(controller.registerCapsule(searchProjectByName, id, capsuleDescription,type , colabName, 
+        colabPosition, lectionLearned ));
         
 
     }

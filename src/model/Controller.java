@@ -60,12 +60,15 @@ public class Controller {
 
 
     // Case 2
-    public String registerCapsule(String searchProjectPosition){
+    public String registerCapsule(String searchProjectPosition, int id,String capsuleDescription,String type ,
+    String colabName, String colabPosition, String lectionLearned){
+
         int pos =searchProjectPosition(searchProjectPosition);
         String msg = "";
         if (pos!= -1){
 
-            msg = projects[pos].registerCapsule();
+            msg = projects[pos].registerCapsule(id, capsuleDescription,type , colabName, 
+            colabPosition, lectionLearned );
         }
         else{
             msg = "project has not been Found";

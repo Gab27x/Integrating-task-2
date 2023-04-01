@@ -15,7 +15,8 @@ public class Capsule {
     */
     
     private int id;
-    private String capsulDescription;
+
+    private String capsuleDescription;
 
     private String type;
 
@@ -25,12 +26,14 @@ public class Capsule {
 
     private String lectionLearned;
 
+    private boolean approveCapsule = false;
 
-    public Capsule(int id, String capsulDescription, String type, String colabName, String colabPosition,
+
+    public Capsule(int id, String capsuleDescription, String type, String colabName, String colabPosition,
      String lectionLearned) {
 
         this.id = id;
-        this.capsulDescription = capsulDescription;
+        this.capsuleDescription = capsuleDescription;
         this.type = type;
         this.colabName = colabName;
         this.colabPosition = colabPosition;
@@ -38,6 +41,13 @@ public class Capsule {
     }
 
     // getters and setters
+    public void setApproveCapsule( boolean approveCapsule){
+        this.approveCapsule = approveCapsule;
+    }
+    public boolean getApprovecapsule(){
+        return this.approveCapsule;
+    }
+
     public int getId() {
         return this.id;
     }
@@ -47,11 +57,11 @@ public class Capsule {
     }
 
     public String getCapsulDescription() {
-        return this.capsulDescription;
+        return this.capsuleDescription;
     }
 
     public void setCapsulDescription(String capsulDescription) {
-        this.capsulDescription = capsulDescription;
+        this.capsuleDescription = capsulDescription;
     }
 
     public String getType() {

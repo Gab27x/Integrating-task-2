@@ -116,12 +116,14 @@ public class Project {
         return pos;
    }
 
-   public String registerCapsule(){
+   public String registerCapsule(int id,String capsuleDescription,String type ,
+   String colabName, String colabPosition, String lectionLearned){
         int pos = activeStagePos();
         String msg="";
 
         if(pos != -1){
-            msg= stages[pos].registerCapsule();
+            msg= stages[pos].registerCapsule(id, capsuleDescription,type , colabName, 
+            colabPosition, lectionLearned);
         }
         else{
             msg="there aren not stages activated";
