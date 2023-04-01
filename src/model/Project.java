@@ -180,7 +180,7 @@ public class Project {
         
     // Case 5
     public String changeStage(){
-        String msg ="";
+        String msg ="x";
         int pos = activeStagePos();
         int newPos = pos+1;
         Calendar date = Calendar.getInstance();

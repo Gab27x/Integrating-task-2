@@ -40,15 +40,6 @@ public class Stage{
 
     // getters and setters
 
-    public int getStage() {
-        return this.stage;
-    }
-
-    public void setStage(int stage) {
-        this.stage = stage;
-
-    }
-
     public String getName() {
         return this.name;
     }
@@ -164,8 +155,10 @@ public class Stage{
 
         for(int i =0; i<NUM_CAPSULS && !idFounded ;i++){
             if (capsules[i]!= null && capsules[i].getId() == id ){
-                capsules[i].setApproveCapsule(true);
+                Boolean approved = true;
+                capsules[i].setApproveCapsule(approved);
                 msg = "capsule approved";
+                idFounded = true;
             }
             else{
 

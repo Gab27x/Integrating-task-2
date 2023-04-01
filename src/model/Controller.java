@@ -136,7 +136,8 @@ public class Controller {
     // Case 5
     public String changeStage(String searchProjectByName){
         int pos = searchProjectPosition(searchProjectByName);
-        String msg="";
+        String msg="o";
+
         if (pos!= -1){
             msg= projects[pos].changeStage();
         }

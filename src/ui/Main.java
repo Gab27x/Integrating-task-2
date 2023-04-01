@@ -311,7 +311,8 @@ public class Main {
     
         System.out.println("\nEnter project name");
         String searchProjectByName = input.next();
-        controller.changeStage(searchProjectByName);
+        System.out.println(controller.changeStage(searchProjectByName));
+        
         
     }
 
