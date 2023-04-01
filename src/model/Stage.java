@@ -2,7 +2,7 @@ package model;
 
 import java.util.Calendar;
 
-// re formular 
+
 public class Stage{
     public static final int NUM_CAPSULS = 50;
     private Capsul[] capsuls;
@@ -17,8 +17,6 @@ public class Stage{
 
     Cada etapa tendrá una fecha de inicio y fin (planeada) y una fecha de inicio y fin (real).
     solo la etapa de inicio queda activa. 
-
-    Para lograr asignar las fechas planeadas se deberá solicitar al usuario la cantidad de meses que se lleva cada etapa (arreglo de cantidad de meses).
 
     */
     private String name;
@@ -89,7 +87,24 @@ public class Stage{
         this.isActive = isActive;
     }
 
-   
+
+
+    // search for empty capsule 
+    public int capsuleAvailable(){
+		int pos = -1;
+		boolean posFounded = false;
+
+		for (int i=0;i <NUM_CAPSULS && !posFounded; i++){
+			if (capsuls[i] == null){
+
+				pos = i;
+				posFounded = true;
+			}
+
+		}
+
+		return pos;
+	}
 
 
 }
