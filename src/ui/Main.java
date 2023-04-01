@@ -1,6 +1,8 @@
 package ui;
 import model.Controller;
 import java.util.Scanner;
+
+
 public class Main {
     private Scanner input;
     private Controller controller;
@@ -14,7 +16,11 @@ public class Main {
         Main view = new Main();
         int option = 0 ;
         do{
-            view.menu();
+            do{
+                view.menu();
+                option= view.input.nextInt();
+            }while( !(option >= 0 && option<=6) );
+
 
         }while(option != 0);
 
@@ -26,11 +32,13 @@ public class Main {
 
     // menu
     public void menu(){
-        System.out.println("0. Exit");
-        System.out.println("1. ");
-        System.out.println("2. ");
-        System.out.println("3. ");
-        System.out.println("4. ");
+        System.out.println("\n0. Exit\n" +
+                    "1. Create project \n"+
+                    "2. Register capsule\n"+
+                    "3. Approve capsule\n"+
+                    "4. Publish capsule\n"+
+                    "5. Complete a stage of a project\n" );
+
 
 
     }
