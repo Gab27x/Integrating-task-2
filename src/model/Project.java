@@ -127,7 +127,7 @@ public class Project {
             msg= stages[pos].registerCapsule(id, capsuleDescription,type , colabName, 
             colabPosition, lectionLearned);
         }
-        else{
+        else if (pos == -1){
             msg="there aren not stages activated";
         }
         

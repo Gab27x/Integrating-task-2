@@ -108,7 +108,7 @@ public class Controller {
         if (pos!= -1){
             msg= projects[pos].approveCapsule( searchStageByName, id);
         }
-        else{
+        else if (pos == -1){
             msg = "project has not been Found";
         }
 

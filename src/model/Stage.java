@@ -114,6 +114,7 @@ public class Stage{
         String msg="";
         
         if (pos != -1){
+            
             capsules[pos]= new Capsule(id, capsuleDescription,type , colabName, 
             colabPosition, lectionLearned);
 
