@@ -89,7 +89,6 @@ public class Stage{
     }
 
 
-
     // search for empty capsule 
     public int capsuleAvailable(){
 		int pos = -1;
@@ -126,8 +125,6 @@ public class Stage{
             msg="the are not capsules available";
         }
         
-
-
         return msg;
 
     }
@@ -188,8 +185,6 @@ public class Stage{
                 msg="The capsule is not approved";
 
             }
-
-    
             return msg; 
     
     
