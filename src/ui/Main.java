@@ -78,68 +78,73 @@ public class Main {
 
         System.out.println("Enter project name");
         String projectName = input.next();
-        
-        System.out.println("Enter client name");
-        String clientName= input.next();
 
-        System.out.println("Enter initial date");
+        System.out.println("\nEnter client name");
+        String clientName = input.next();
+
+        System.out.println("\nEnter initial date");
         Calendar initialDate = createdate();
-
+        System.out.println(convDateFormat(initialDate));
         // calculate planned dates
 
         Calendar date = initialDate ;
+        
     
-        System.out.println("Enter start stage duration (months)");
+        System.out.println("\nEnter start stage duration (months)");
         int stageDurationInMonths0 = input.nextInt();
 
         Calendar planedInitialDate0 = initialDate;
         Calendar planedFinalDate0 = addMonths(date, stageDurationInMonths0);
+        System.out.println(convDateFormat(date));
 
-        System.out.println("Enter analysis stage duration (months)");
+        System.out.println("\nEnter analysis stage duration (months)");
         int stageDurationInMonths1  = input.nextInt();
         Calendar planedInitialDate1 = planedFinalDate0;
         Calendar planedFinalDate1 = addMonths(date, stageDurationInMonths1);
+        System.out.println(convDateFormat(date));
 
-
-        System.out.println("Enter design stage duration (months)");
+        System.out.println("\nEnter design stage duration (months)");
         int stageDurationInMonths2  = input.nextInt();
         Calendar planedInitialDate2 = planedFinalDate1;
         Calendar planedFinalDate2 = addMonths(date, stageDurationInMonths2);
+        System.out.println(convDateFormat(date));
 
 
-        System.out.println("Enter execution stage duration (months)");
+        System.out.println("\nEnter execution stage duration (months)");
         int stageDurationInMonths3 = input.nextInt();
         Calendar planedInitialDate3 = planedFinalDate2;
         Calendar planedFinalDate3 = addMonths(date, stageDurationInMonths3);
+        System.out.println(convDateFormat(date));
 
 
-        System.out.println("Enter closure  stage duration (months)");
+        System.out.println("\nEnter closure  stage duration (months)");
         int stageDurationInMonths4 = input.nextInt();
         Calendar planedInitialDate4 = planedFinalDate3;
         Calendar planedFinalDate4= addMonths(date, stageDurationInMonths4);
+        System.out.println(convDateFormat(date));
 
 
-        System.out.println("Enter  project control stage duration (months)");
+        System.out.println("\nEnter project control stage duration (months)");
         int stageDurationInMonths5 = input.nextInt();
-
         Calendar planedInitialDate5 = planedFinalDate4;
         Calendar planedFinalDate5 = addMonths(date, stageDurationInMonths5);
+        System.out.println(convDateFormat(date));
 
         Calendar finalDate = planedFinalDate5;
 
-        System.out.println("Enter project name");
+        System.out.println("\nEnter project budget");
         double budget= input.nextDouble();
 
-        System.out.println("Enter project name");
+        System.out.println("\nEnter Green SQA project manager name");
         String managerNameG = input.next();
 
-        System.out.println("Enter project name");
+        System.out.println("\nEnter Green SQA project manager phone number ");
         String managerNumberG = input.next();
 
-        System.out.println("Enter project name");
+        System.out.println("\nEnter clients project manager name");
         String managerNameC= input.next();
 
-        System.out.println("Enter project name");
+        System.out.println("\nEnter clients project manager phone number");
         String managerNumberC= input.next();
 
 
