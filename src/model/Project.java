@@ -17,12 +17,12 @@ Un proyecto de un cliente se debe almacenar:
 
 */
     //attributes
+    
     private String projectName;
     private String clientName;
     private Calendar initialDate;
     private Calendar finalDate;
     private double budget;
-
     private String managerNameG;
     private String managerNumberG;
     private String managerNameC;
@@ -47,9 +47,42 @@ Un proyecto de un cliente se debe almacenar:
     }
 
     // get
-    public String getprojectName(){
-        return projectName;
-
+    public String getProjectName() {
+        return this.projectName;
     }
+
+    public String getClientName() {
+        return this.clientName;
+    }
+
+    public Calendar getInitialDate() {
+        return this.initialDate;
+    }
+
+    public Calendar getFinalDate() {
+        return this.finalDate;
+    }
+
+    public double getBudget() {
+        return this.budget;
+    }
+
+    public String getManagerNameG() {
+        return this.managerNameG;
+    }
+
+    public String getManagerNumberG() {
+        return this.managerNumberG;
+    }
+
+    public String getManagerNameC() {
+        return this.managerNameC;
+    }
+
+    public String getManagerNumberC() {
+        return this.managerNumberC;
+    }
+
+    
     
 }
