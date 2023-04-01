@@ -118,9 +118,18 @@ public class Controller {
 
     // Case 4
 
-    public void publishCapsule(){
+    public String publishCapsule(String searchProjectByName, String searchStageByName,int id){
+        int pos =searchProjectPosition(searchProjectByName);
+        String msg = "";
 
+        if (pos!= -1){
+            msg= projects[pos].publishCapsule( searchStageByName, id);
+        }
+        else{
+            msg = "project has not been Found";
+        }
 
+        return msg;
         
     }
 

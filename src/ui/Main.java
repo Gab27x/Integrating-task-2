@@ -2,6 +2,8 @@ package ui;
 
 import java.util.Calendar;
 import java.util.Scanner;
+
+
 import model.Controller;
 
 import java.text.SimpleDateFormat;
@@ -197,7 +199,7 @@ public class Main {
         int option = 0;
         System.out.println("\nEnter project name");
         String searchProjectByName = input.next();
-
+        
         do{
             System.out.println("\n Select stage by name\n" +
             "1. start \n"+
@@ -245,8 +247,6 @@ public class Main {
 
         System.out.println(controller.approveCapsule(searchProjectByName, searchStageByName, id));
         
-
-
         
     }
 
@@ -254,8 +254,56 @@ public class Main {
 
     public void publishCapsule(){
 
-
+        int option = 0;
+        System.out.println("\nEnter project name");
+        String searchProjectByName = input.next();
         
+        do{
+            System.out.println("\n Select stage by name\n" +
+            "1. start \n"+
+            "2. analysis\n"+
+            "3. design\n"+
+            "4. execution\n"+
+            "5. closure\n"+
+            "6. project control\n");
+            option= input.nextInt();
+        }while( !(option>0 && option<=6) );
+
+        String searchStageByName ="";
+
+        switch(option){
+
+            case 1:
+            searchStageByName = "start"  ;
+            break;
+
+            case 2:
+            searchStageByName = "analysis" ;
+            break;
+
+            case 3:
+            searchStageByName =  "design" ;
+            break;
+
+            case 4:
+            searchStageByName =  "execution" ;
+            break;
+
+            case 5:
+            searchStageByName =   "closure ";
+            break;
+
+            case 6:
+            searchStageByName =  "project control";
+            break;
+
+        }
+
+
+        System.out.println("\nEnter Capsule id");
+        int id = input.nextInt();
+
+        System.out.println(controller.publishCapsule(searchProjectByName, searchStageByName, id));
     }
 
     // Case 5

@@ -129,6 +129,22 @@ public class Stage{
         return msg;
 
     }
+    public int isTheCapsuleApproved(int id){
+        int pos = -1;
+        boolean capsuleFound = false;
+
+		for (int i=0;i <NUM_CAPSULS && !capsuleFound; i++){
+			if (capsules[i] != null && capsules[i].getId() == id ){
+				pos = i;
+			}
+
+		}
+
+        return pos;
+
+    }
+
+
     // case 3
     public String approveCapsule(int id){
 
@@ -153,6 +169,27 @@ public class Stage{
    
         }
 
+        // case 4
+
+        public String publishCapsule(int id){
+            String msg = "";
+            int pos = isTheCapsuleApproved(id);
+
+            if(pos != -1){
+                capsules[pos].setIsTheCapsulePublished(true);
+                msg = "capsule published" ;
+
+            }
+            else{
+                msg="The capsule is not approved";
+
+            }
+
+    
+            return msg; 
+    
+    
+        }
 
 
 

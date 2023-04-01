@@ -28,6 +28,8 @@ public class Capsule {
 
     private boolean approveCapsule = false;
 
+    private boolean isTheCapsulePublished = false;
+
 
     public Capsule(int id, String capsuleDescription, String type, String colabName, String colabPosition,
      String lectionLearned) {
@@ -41,6 +43,15 @@ public class Capsule {
     }
 
     // getters and setters
+
+    
+    public void setIsTheCapsulePublished( boolean isTheCapsulePublished){
+        this.isTheCapsulePublished = isTheCapsulePublished;
+    }
+    public boolean getIsTheCapsulePublished(){
+        return this.isTheCapsulePublished;
+    }
+
     public void setApproveCapsule( boolean approveCapsule){
         this.approveCapsule = approveCapsule;
     }

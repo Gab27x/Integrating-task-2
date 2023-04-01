@@ -152,7 +152,27 @@ public class Project {
 
         return msg; 
 
+    
     }
+        // case 4
+        public String publishCapsule(String searchStageByName,int id){
+
+            int pos= activeStagePos();
+            String msg = "";
+    
+            if (pos!= -1 && stages[pos].getName().equalsIgnoreCase(searchStageByName)){
+    
+                msg=stages[pos].publishCapsule(id);
+                
+    
+       
+            }
+            else{
+                msg= "Capsule not found";
+            }
+    
+            return msg; 
     
     
+        }
 }
