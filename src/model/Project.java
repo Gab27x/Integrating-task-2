@@ -23,20 +23,33 @@ Un proyecto de un cliente se debe almacenar:
     private Calendar finalDate;
     private double budget;
 
+    private String managerNameG;
+    private String managerNumberG;
+    private String managerNameC;
+    private String managerNumberC;
 
-    /*
-		this.name = name;	
+
+
+
+    public Project(String projectName,String clientName,Calendar initialDate,Calendar finalDate,double budget,
+    String managerNameG,String managerNumberG, String managerNameC,String managerNumberC ){
+
+        this.projectName = projectName;	
 		this.clientName = clientName;
-		this.projectType = projectType;
-		this.initialDate = initialDate;
-		this.finalDate = finalDate;
-		this.budget = budget;
-     */
+        this.initialDate = initialDate;
+        this.finalDate = finalDate;
+        this.budget = budget;
 
+		this.managerNameG = managerNameG;
+        this.managerNumberG = managerNumberG;
+        this.managerNameC = managerNameC;
+        this.managerNumberC = managerNumberC; 
+    }
 
-    public Project(){
-        
-        
+    // get
+    public String getprojectName(){
+        return projectName;
+
     }
     
 }
