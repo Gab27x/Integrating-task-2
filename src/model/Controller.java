@@ -20,6 +20,8 @@ public class Controller {
         if(pos != -1){
 			projects[pos] = new Project(projectName,clientName,initialDate,finalDate,
             budget,managerNameG,managerNumberG,managerNameC,managerNumberC) ;
+            
+            //projects[pos].stage() ;
 
 
 			

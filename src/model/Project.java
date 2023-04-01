@@ -4,17 +4,14 @@ import java.util.Calendar;
 
 public class Project {
 /*
-Un proyecto de un cliente se debe almacenar:
-1.	nombre del proyecto =)
-2.	nombre del cliente =)
-3.	fecha planeada para el inicio del proyecto  =)
-4.	fecha planeada para la finalización del proyecto =)
-5.	presupuesto =)
-6.	el nombre y número celular de el gerente del proyecto de green
-7.  el nombre y número celular de el gerente del proyecto del cliente
-
-
-
+    Un proyecto de un cliente se debe almacenar:
+    1.	nombre del proyecto =)
+    2.	nombre del cliente =)
+    3.	fecha planeada para el inicio del proyecto  =)
+    4.	fecha planeada para la finalización del proyecto =)
+    5.	presupuesto =)
+    6.	el nombre y número celular de el gerente del proyecto de green
+    7.  el nombre y número celular de el gerente del proyecto del cliente
 
 */
     //attributes
@@ -48,6 +45,7 @@ Un proyecto de un cliente se debe almacenar:
         this.managerNumberC = managerNumberC; 
     }
 
+    
     // get
     public String getProjectName() {
         return this.projectName;
