@@ -1,7 +1,8 @@
 package model;
-
+// re formular 
 public class Stage{
     public static final int NUM_CAPSULS = 50;
+    private Capsul[] capsuls;
     /*
     Cuando se crea el proyecto, automáticamente se crean sus 6 etapas:
     1.	inicio
@@ -18,87 +19,15 @@ public class Stage{
     Para lograr asignar las fechas planeadas se deberá solicitar al usuario la cantidad de meses que se lleva cada etapa (arreglo de cantidad de meses).
 
     */
-    private boolean start = true;
-    private boolean analysis = false;
-    private boolean design = false;
-    private boolean execution= false;
-    private boolean closure = false;
-    private boolean followUp = false;
-    private boolean projectControl= false;
+    private String name;
 
-    public Stage(){
-
-        Capsul[] capsuls = new Capsul[NUM_CAPSULS];
+    public Stage(String name){
+        this.name = name;
+        capsuls = new Capsul[NUM_CAPSULS];
 
     }
 
    
-
-
-    public boolean getStart() {
-        return this.start;
-    }
-
-    public void setStart(boolean start) {
-        this.start = start;
-    }
-
-
-
-    public boolean getAnalysis() {
-        return this.analysis;
-    }
-
-    public void setAnalysis(boolean analysis) {
-        this.analysis = analysis;
-    }
-
-
-    public boolean getDesign() {
-        return this.design;
-    }
-
-    public void setDesign(boolean design) {
-        this.design = design;
-    }
-
-
-    public boolean getExecution() {
-        return this.execution;
-    }
-
-    public void setExecution(boolean execution) {
-        this.execution = execution;
-    }
-
-
-    public boolean getClosure() {
-        return this.closure;
-    }
-
-    public void setClosure(boolean closure) {
-        this.closure = closure;
-    }
-
-
-    public boolean getFollowUp() {
-        return this.followUp;
-    }
-
-    public void setFollowUp(boolean followUp) {
-        this.followUp = followUp;
-    }
-
-
-    public boolean getProjectControl() {
-        return this.projectControl;
-    }
-
-    public void setProjectControl(boolean projectControl) {
-        this.projectControl = projectControl;
-    }
-
-
 
 
 }

@@ -18,13 +18,9 @@ public class Controller {
         String msg = "Couldn't create the project";
         int pos = posAvailable();
         if(pos != -1){
+            
 			projects[pos] = new Project(projectName,clientName,initialDate,finalDate,
             budget,managerNameG,managerNumberG,managerNameC,managerNumberC) ;
-            
-            //projects[pos].stage() ;
-
-
-			
 			msg = "Project created";
 		}
 

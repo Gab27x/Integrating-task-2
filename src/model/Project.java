@@ -3,6 +3,8 @@ package model;
 import java.util.Calendar;
 
 public class Project {
+    private static final int NUM_STAGES = 6;
+    private Stage[] stages = new Stage[NUM_STAGES] ;
 /*
     Un proyecto de un cliente se debe almacenar:
     1.	nombre del proyecto =)
@@ -26,7 +28,7 @@ public class Project {
     private String managerNameC;
     private String managerNumberC;
 
-    private Stage stage;
+   
 
 
 
@@ -38,11 +40,17 @@ public class Project {
         this.initialDate = initialDate;
         this.finalDate = finalDate;
         this.budget = budget;
-
 		this.managerNameG = managerNameG;
         this.managerNumberG = managerNumberG;
         this.managerNameC = managerNameC;
         this.managerNumberC = managerNumberC; 
+
+        this.stages[0] = new Stage("");
+        this.stages[1] = new Stage("");
+        this.stages[2] = new Stage("");
+        this.stages[3] = new Stage("");
+        this.stages[4] = new Stage("");
+        this.stages[5] = new Stage("");
     }
 
     
