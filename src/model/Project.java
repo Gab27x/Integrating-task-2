@@ -141,7 +141,7 @@ public class Project {
 
         if (pos!= -1 && stages[pos].getName().equalsIgnoreCase(searchStageByName)){
 
-            stages[pos].approveCapsule(id);
+            msg=stages[pos].approveCapsule(id);
             
 
    
@@ -149,9 +149,6 @@ public class Project {
         else{
             msg= "Capsule not found";
         }
-
-
-    
 
         return msg; 
 

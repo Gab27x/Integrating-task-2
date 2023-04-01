@@ -171,19 +171,19 @@ public class Main {
         System.out.println("\nEnter a capsule id (must be unique)");
         int id = input.nextInt();
 
-        System.out.println("\nEnter project name");
+        System.out.println("\nEnter capsule description");
         String capsuleDescription = input.next();
 
-        System.out.println("\nEnter project name");
+        System.out.println("\nEnter capsule tyoe");
         String type = input.next();
         
-        System.out.println("\nEnter project name");
+        System.out.println("\nEnter collaborator name");
         String colabName = input.next();
         
-        System.out.println("\nEnter project name");
+        System.out.println("\nEnter collaborator position");
         String colabPosition = input.next();
         
-        System.out.println("\nEnter project name");
+        System.out.println("\nEnter lection learned");
         String lectionLearned = input.next();
 
         System.out.println(controller.registerCapsule(searchProjectByName, id, capsuleDescription,type , colabName, 
@@ -243,7 +243,8 @@ public class Main {
         System.out.println("\nEnter Capsule id");
         int id = input.nextInt();
 
-        controller.approveCapsule(searchProjectByName, searchStageByName, id);
+        System.out.println(controller.approveCapsule(searchProjectByName, searchStageByName, id));
+        
 
 
         
