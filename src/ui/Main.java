@@ -78,17 +78,24 @@ public class Main {
     // Case 1
     public void createProject(){
 
+        // change to next line
+        input.nextLine(); // clean buffer
+
         System.out.println("Enter project name");
-        String projectName = input.next();
+        String projectName = input.nextLine();
+
+        System.out.println(projectName);
 
         System.out.println("\nEnter client name");
-        String clientName = input.next();
+        String clientName = input.nextLine();
+
+        System.out.println(clientName);
 
         System.out.println("\nEnter initial date");
         Calendar initialDate = createdate();
         System.out.println(convDateFormat(initialDate));
-        // calculate planned dates
 
+        // calculate planned dates
         Calendar date = initialDate ;
         
     
@@ -96,58 +103,72 @@ public class Main {
         int stageDurationInMonths0 = input.nextInt();
 
         Calendar planedInitialDate0 = initialDate;
+
         Calendar planedFinalDate0 = addMonths(date, stageDurationInMonths0);
-        System.out.println(convDateFormat(date));
+        System.out.println("\nThis stage will last until "+convDateFormat(date));
+
 
         System.out.println("\nEnter analysis stage duration (months)");
         int stageDurationInMonths1  = input.nextInt();
         Calendar planedInitialDate1 = planedFinalDate0;
         Calendar planedFinalDate1 = addMonths(date, stageDurationInMonths1);
-        System.out.println(convDateFormat(date));
+        System.out.println("\nThis stage will last until "+convDateFormat(date));
+
 
         System.out.println("\nEnter design stage duration (months)");
         int stageDurationInMonths2  = input.nextInt();
         Calendar planedInitialDate2 = planedFinalDate1;
         Calendar planedFinalDate2 = addMonths(date, stageDurationInMonths2);
-        System.out.println(convDateFormat(date));
+        System.out.println("\nThis stage will last until "+convDateFormat(date));
 
 
         System.out.println("\nEnter execution stage duration (months)");
         int stageDurationInMonths3 = input.nextInt();
         Calendar planedInitialDate3 = planedFinalDate2;
         Calendar planedFinalDate3 = addMonths(date, stageDurationInMonths3);
-        System.out.println(convDateFormat(date));
+        System.out.println("\nThis stage will last until "+convDateFormat(date));
 
 
         System.out.println("\nEnter closure  stage duration (months)");
         int stageDurationInMonths4 = input.nextInt();
         Calendar planedInitialDate4 = planedFinalDate3;
         Calendar planedFinalDate4= addMonths(date, stageDurationInMonths4);
-        System.out.println(convDateFormat(date));
+        System.out.println("\nThis stage will last until "+convDateFormat(date));
 
 
         System.out.println("\nEnter project control stage duration (months)");
         int stageDurationInMonths5 = input.nextInt();
         Calendar planedInitialDate5 = planedFinalDate4;
         Calendar planedFinalDate5 = addMonths(date, stageDurationInMonths5);
-        System.out.println(convDateFormat(date));
+        System.out.println("\nThis stage will last until "+convDateFormat(date));
 
         Calendar finalDate = planedFinalDate5;
 
         System.out.println("\nEnter project budget");
         double budget= input.nextDouble();
 
+        // change to next line
+        input.nextLine(); // clean buffer
+
         System.out.println("\nEnter Green SQA project manager name");
-        String managerNameG = input.next();
+        String managerNameG = input.nextLine();
+
+        System.out.println(managerNameG);
 
         System.out.println("\nEnter Green SQA project manager phone number ");
-        String managerNumberG = input.next();
+        String managerNumberG = input.nextLine();
+
+        System.out.println(managerNumberG);
 
         System.out.println("\nEnter clients project manager name");
-        String managerNameC= input.next();
+        String managerNameC= input.nextLine();
+
+        System.out.println(managerNameC);
 
         System.out.println("\nEnter clients project manager phone number");
-        String managerNumberC= input.next();
+        String managerNumberC= input.nextLine();
+
+        System.out.println(managerNumberC);
 
 
         controller.createProject(projectName, clientName, initialDate, finalDate, budget,
@@ -167,16 +188,21 @@ public class Main {
     // Case 2
     // add next line in long strings be carefull
     public void registerCapsule(){
+        
+        // add project validation
         System.out.println("\nEnter project name");
         String searchProjectByName = input.next();
 
         System.out.println("\nEnter a capsule id (must be unique)");
         int id = input.nextInt();
 
-        System.out.println("\nEnter capsule description");
-        String capsuleDescription = input.next();
+        // change to next line
+        input.nextLine(); // clean buffer
 
-        System.out.println("\nEnter capsule tyoe");
+        System.out.println("\nEnter capsule description");
+        String capsuleDescription = input.nextLine();
+
+        System.out.println("\nEnter capsule type");
         String type = input.next();
         
         System.out.println("\nEnter collaborator name");
@@ -355,6 +381,9 @@ public class Main {
 	}
 
 
+
+
+    
 
 }
 
