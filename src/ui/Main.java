@@ -186,6 +186,7 @@ public class Main {
     }
 
     // Case 2
+
     // add next line in long strings be carefull
     public void registerCapsule(){
 
@@ -234,11 +235,15 @@ public class Main {
     // Case 3
     public void approvecapsule(){
         int option = 0;
+
+        // change to next line
+        input.nextLine(); // clean buffer
+
         System.out.println("\nEnter project name");
-        String searchProjectByName = input.next();
+        String searchProjectByName = input.nextLine();
         
         do{
-            System.out.println("\n Select stage by name\n" +
+            System.out.println("\nSelect stage by name\n" +
             "1. start \n"+
             "2. analysis\n"+
             "3. design\n"+
@@ -292,6 +297,7 @@ public class Main {
     public void publishCapsule(){
 
         int option = 0;
+
         System.out.println("\nEnter project name");
         String searchProjectByName = input.next();
         
