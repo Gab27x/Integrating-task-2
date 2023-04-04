@@ -25,6 +25,7 @@ public class Main {
         do{
             do{
                 view.menu();
+                System.out.println("Select option");
                 option= view.input.nextInt();
             }while( !(option >= 0 && option<=6) );
 
@@ -33,6 +34,7 @@ public class Main {
         }while(option != 0);
 
 
+        
         view.input.close();
     }
     
@@ -298,11 +300,14 @@ public class Main {
 
         int option = 0;
 
+        // change to next line
+        input.nextLine(); // clean buffer
+
         System.out.println("\nEnter project name");
-        String searchProjectByName = input.next();
+        String searchProjectByName = input.nextLine();
         
         do{
-            System.out.println("\n Select stage by name\n" +
+            System.out.println("\nSelect stage by name\n" +
             "1. start \n"+
             "2. analysis\n"+
             "3. design\n"+
@@ -351,9 +356,12 @@ public class Main {
 
     // Case 5
     public void changeStage(){
-    
+
+        // change to next line
+        input.nextLine(); // clean buffer
+
         System.out.println("\nEnter project name");
-        String searchProjectByName = input.next();
+        String searchProjectByName = input.nextLine();
         System.out.println(controller.changeStage(searchProjectByName));
         
         
