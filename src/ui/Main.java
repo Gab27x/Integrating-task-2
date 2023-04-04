@@ -188,31 +188,42 @@ public class Main {
     // Case 2
     // add next line in long strings be carefull
     public void registerCapsule(){
-        
+
+        // change to next line
+        input.nextLine(); // clean buffer
+
         // add project validation
         System.out.println("\nEnter project name");
-        String searchProjectByName = input.next();
+        String searchProjectByName = input.nextLine();
+        System.out.println(searchProjectByName);
 
         System.out.println("\nEnter a capsule id (must be unique)");
         int id = input.nextInt();
+        System.out.println(id);
 
         // change to next line
         input.nextLine(); // clean buffer
 
         System.out.println("\nEnter capsule description");
         String capsuleDescription = input.nextLine();
+        System.out.println(capsuleDescription);
 
         System.out.println("\nEnter capsule type");
-        String type = input.next();
-        
+        String type = input.nextLine();
+        System.out.println(type);
+
+
         System.out.println("\nEnter collaborator name");
-        String colabName = input.next();
+        String colabName = input.nextLine();
+        System.out.println(colabName);
         
         System.out.println("\nEnter collaborator position");
-        String colabPosition = input.next();
+        String colabPosition = input.nextLine();
+        System.out.println(colabPosition);
         
         System.out.println("\nEnter lection learned");
-        String lectionLearned = input.next();
+        String lectionLearned = input.nextLine();
+        System.out.println(lectionLearned);
 
         System.out.println(controller.registerCapsule(searchProjectByName, id, capsuleDescription,type , colabName, 
         colabPosition, lectionLearned ));
