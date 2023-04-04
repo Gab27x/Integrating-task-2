@@ -60,6 +60,7 @@ public class Controller {
 
 
     // Case 2
+
     public String registerCapsule(String searchProjectPosition, int id,String capsuleDescription,String type ,
     String colabName, String colabPosition, String lectionLearned){
 
@@ -87,12 +88,16 @@ public class Controller {
         int pos=-1;
         boolean projectFound = false;
         for(int i=0; i<SIZE && !projectFound;i++){
-            if(projects[i].getProjectName().equalsIgnoreCase(searchProjectByName) && projects[i]!= null ){
-                projectFound = true;
-                pos=i;
-
+            while(projects[i] != null){
+                if(projects[i].getProjectName().equalsIgnoreCase(searchProjectByName) && projects[i]!= null ){
+                    projectFound = true;
+                    pos=i;
+    
+    
+                }
 
             }
+
 
         }
         return pos;
