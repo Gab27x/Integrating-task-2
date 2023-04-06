@@ -95,7 +95,7 @@ public class Controller {
 
     
     /** 
-     * 
+     * this method allows to register a capsule
      * @param searchProjectPosition
      * @param id
      * @param capsuleDescription
@@ -130,7 +130,7 @@ public class Controller {
     }
     
     /** 
-     * 
+     * this method searches for the position of a specific project  
      * @param searchProjectByName
      * @return int
      */
@@ -158,7 +158,7 @@ public class Controller {
 
     
     /** 
-     * 
+     * this method allows to approve a capusule
      * @param searchProjectByName
      * @param searchStageByName
      * @param id
@@ -183,12 +183,12 @@ public class Controller {
 
     
     /** 
-     * 
+     * this method allows to publish a capsule
      * @param searchProjectByName
      * @param searchStageByName
      * @param id
      * @return String
-     */
+    */
     // Case 4
 
     public String publishCapsule(String searchProjectByName, String searchStageByName,int id){
@@ -208,9 +208,9 @@ public class Controller {
 
     
     /** 
-     * 
+     * this method allows to change the stage of a specific project
      * @param searchProjectByName
-     * @return String
+    * @return String
     */
 
     // Case 5
