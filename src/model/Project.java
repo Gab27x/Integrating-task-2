@@ -104,7 +104,7 @@ public class Project {
 
    
    /** 
-    * 
+    * this method searchs the active stage position 
     * @return int
     */
    // localice active stage
@@ -124,6 +124,7 @@ public class Project {
    }
     
     /** 
+     * this method allows to register a capsule
      * @param id
      * @param capsuleDescription
      * @param type
@@ -152,6 +153,7 @@ public class Project {
     }
     
     /** 
+     * this method allows to approve a capsule
      * @param searchStageByName
      * @param id
      * @return String
@@ -181,12 +183,13 @@ public class Project {
 
         
         /** 
+         * this method allows to publish a capsule
          * @param searchStageByName
          * @param id
          * @return String
         */
         
-         // case 4
+        // case 4
         public String publishCapsule(String searchStageByName,int id){
 
             int pos= activeStagePos();
@@ -212,7 +215,7 @@ public class Project {
         
     
     /** 
-     *
+     * this method allows to chage a stage
      *  @return String
      * 
     */

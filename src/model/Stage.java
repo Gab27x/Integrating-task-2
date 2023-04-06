@@ -91,7 +91,7 @@ public class Stage{
 
     
     /** 
-     * 
+     * this method
      * @return int
      */
 
@@ -114,7 +114,7 @@ public class Stage{
 
     
     /** 
-     * 
+     * this method
      * @param id
      * @param capsuleDescription
      * @param type
@@ -149,6 +149,7 @@ public class Stage{
 
     
     /** 
+     * this method
      * @param id
      * @return int
      */
@@ -170,6 +171,7 @@ public class Stage{
 
     
     /** 
+     * this method
      * @param id
      * @return String
      */
@@ -201,6 +203,7 @@ public class Stage{
 
         
         /** 
+         * this method
          * @param id
          * @return String
          */
