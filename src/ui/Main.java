@@ -38,7 +38,9 @@ public class Main {
         view.input.close();
     }
     
-
+    /**
+     * This method shows the menu
+     */
 
     // menu
     public void menu(){
@@ -52,6 +54,12 @@ public class Main {
 
 
     }
+    
+    /** 
+     * 
+     * @param option
+     * 
+     */
     // executeOption 
     public void executeOption(int option){
 		switch(option){
@@ -78,6 +86,10 @@ public class Main {
 	}
 
     // Case 1
+        /**
+     * This method allows to create a project
+     */
+
     public void createProject(){
 
         // change to next line
@@ -188,6 +200,9 @@ public class Main {
     }
 
     // Case 2
+        /**
+     * This method allows to register a capsule
+     */
 
     // add next line in long strings be carefull
     public void registerCapsule(){
@@ -234,7 +249,11 @@ public class Main {
 
     }
 
+
     // Case 3
+    /**
+     * This method allows to approve a capsule
+     */
     public void approvecapsule(){
         int option = 0;
 
@@ -295,7 +314,9 @@ public class Main {
     }
 
     // Case 4
-
+    /**
+     * This method allows to publish a capsule
+     */
     public void publishCapsule(){
 
         int option = 0;
@@ -355,6 +376,9 @@ public class Main {
     }
 
     // Case 5
+    /**
+     * This method allows to change the stage of a project
+     */
     public void changeStage(){
 
         // change to next line
@@ -369,7 +393,13 @@ public class Main {
 
 
 
+    
+    /** 
+     * this method allow create a date with the format type calendar
+     * @return Calendar
+     */
     // create a date
+
     public Calendar createdate(){
         Calendar newDate =  Calendar.getInstance();
 
@@ -390,6 +420,12 @@ public class Main {
     }
 
 
+    
+    /** 
+     * this method converts a calendar type date to a string with the format dd/MM/yyyy
+     * @param date
+     * @return String
+     */
     // change date format
     public String convDateFormat(Calendar date){
 
@@ -397,6 +433,14 @@ public class Main {
 		return formatDate;
 
 	}
+
+    
+    /** 
+     * this method allows to add months to a calendar type date
+     * @param date
+     * @param months
+     * @return Calendar
+     */
     public Calendar addMonths(Calendar date, int months){
 		
 		date.add(Calendar.MONTH, months); 

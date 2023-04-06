@@ -12,6 +12,32 @@ public class Controller {
 	
 	}
 
+    
+    /** 
+     * @param projectName
+     * @param clientName
+     * @param initialDate
+     * @param finalDate
+     * @param budget
+     * @param managerNameG
+     * @param managerNumberG
+     * @param managerNameC
+     * @param managerNumberC
+     * @param planedInitialDate0
+     * @param planedFinalDate0
+     * @param planedInitialDate1
+     * @param planedFinalDate1
+     * @param planedInitialDate2
+     * @param planedFinalDate2
+     * @param planedInitialDate3
+     * @param planedFinalDate3
+     * @param planedInitialDate4
+     * @param planedFinalDate4
+     * @param planedInitialDate5
+     * @param planedFinalDate5
+     * @return String
+     */
+
     // Case 1
     public String createProject(String projectName,String clientName,Calendar initialDate,Calendar finalDate,double budget,
     String managerNameG,String managerNumberG, String managerNameC,String managerNumberC,
@@ -42,7 +68,12 @@ public class Controller {
 
 
 
-	public int posAvailable(){
+	
+    /** 
+     * @return int
+     */
+
+    public int posAvailable(){
 		int pos = -1;
 		boolean posFounded = false;
 
@@ -59,6 +90,17 @@ public class Controller {
 
 
 
+    
+    /** 
+     * @param searchProjectPosition
+     * @param id
+     * @param capsuleDescription
+     * @param type
+     * @param colabName
+     * @param colabPosition
+     * @param lectionLearned
+     * @return String
+     */
     // Case 2
 
     public String registerCapsule(String searchProjectPosition, int id,String capsuleDescription,String type ,
