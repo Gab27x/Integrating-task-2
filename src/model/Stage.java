@@ -91,7 +91,7 @@ public class Stage{
 
     
     /** 
-     * this method
+     * this method searchs an available place in the capsule array
      * @return int
      */
 
@@ -114,7 +114,7 @@ public class Stage{
 
     
     /** 
-     * this method
+     * this method allows to create a new capsule using the class constructure
      * @param id
      * @param capsuleDescription
      * @param type
@@ -149,11 +149,11 @@ public class Stage{
 
     
     /** 
-     * this method
+     * this method search the position of a capsule using the id
      * @param id
      * @return int
      */
-    public int isTheCapsuleApproved(int id){
+    public int searchPosById(int id){
         int pos = -1;
         boolean capsuleFound = false;
 
@@ -171,7 +171,7 @@ public class Stage{
 
     
     /** 
-     * this method
+     * this method allows to approve a specific capsule 
      * @param id
      * @return String
      */
@@ -203,7 +203,7 @@ public class Stage{
 
         
         /** 
-         * this method
+         * this method allows to publish a specific capsule 
          * @param id
          * @return String
          */
@@ -211,7 +211,7 @@ public class Stage{
 
         public String publishCapsule(int id){
             String msg = "";
-            int pos = isTheCapsuleApproved(id);
+            int pos = searchPosById(id);
 
             if(pos != -1){
                 capsules[pos].setIsTheCapsulePublished(true);
