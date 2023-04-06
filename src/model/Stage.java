@@ -89,6 +89,12 @@ public class Stage{
     }
 
 
+    
+    /** 
+     * 
+     * @return int
+     */
+
     // search for empty capsule 
     public int capsuleAvailable(){
 		int pos = -1;
@@ -106,6 +112,17 @@ public class Stage{
 		return pos;
 	}
 
+    
+    /** 
+     * 
+     * @param id
+     * @param capsuleDescription
+     * @param type
+     * @param colabName
+     * @param colabPosition
+     * @param lectionLearned
+     * @return String
+     */
     public String registerCapsule(int id,String capsuleDescription,String type ,
     String colabName, String colabPosition, String lectionLearned){
         int pos = capsuleAvailable();
@@ -128,6 +145,13 @@ public class Stage{
         return msg;
 
     }
+
+
+    
+    /** 
+     * @param id
+     * @return int
+     */
     public int isTheCapsuleApproved(int id){
         int pos = -1;
         boolean capsuleFound = false;
@@ -144,6 +168,11 @@ public class Stage{
     }
 
 
+    
+    /** 
+     * @param id
+     * @return String
+     */
     // case 3
     public String approveCapsule(int id){
 
@@ -170,6 +199,11 @@ public class Stage{
    
         }
 
+        
+        /** 
+         * @param id
+         * @return String
+         */
         // case 4
 
         public String publishCapsule(int id){

@@ -102,6 +102,11 @@ public class Project {
         return this.managerNumberC;
     }
 
+   
+   /** 
+    * 
+    * @return int
+    */
    // localice active stage
     public int activeStagePos(){
         int pos = -1;
@@ -117,6 +122,16 @@ public class Project {
 
         return pos;
    }
+    
+    /** 
+     * @param id
+     * @param capsuleDescription
+     * @param type
+     * @param colabName
+     * @param colabPosition
+     * @param lectionLearned
+     * @return String
+     */
     // case 2
    public String registerCapsule(int id,String capsuleDescription,String type ,
    String colabName, String colabPosition, String lectionLearned){
@@ -135,7 +150,14 @@ public class Project {
         return msg;
 
     }
+    
+    /** 
+     * @param searchStageByName
+     * @param id
+     * @return String
+     */
     // case 3
+
     public String approveCapsule(String searchStageByName,int id){
 
         int pos= activeStagePos();
@@ -156,7 +178,15 @@ public class Project {
 
     
     }
-        // case 4
+
+        
+        /** 
+         * @param searchStageByName
+         * @param id
+         * @return String
+        */
+        
+         // case 4
         public String publishCapsule(String searchStageByName,int id){
 
             int pos= activeStagePos();
@@ -177,7 +207,15 @@ public class Project {
     
     
         }
+
+    
         
+    
+    /** 
+     *
+     *  @return String
+     * 
+    */
     // Case 5
     public String changeStage(){
         String msg ="x";

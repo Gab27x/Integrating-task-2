@@ -13,7 +13,10 @@ public class Controller {
 	}
 
     
+    // Case 1
     /** 
+     * this method creates a project using the class constructor and returns a confirmation message
+     * 
      * @param projectName
      * @param clientName
      * @param initialDate
@@ -36,9 +39,8 @@ public class Controller {
      * @param planedInitialDate5
      * @param planedFinalDate5
      * @return String
-     */
+    */
 
-    // Case 1
     public String createProject(String projectName,String clientName,Calendar initialDate,Calendar finalDate,double budget,
     String managerNameG,String managerNumberG, String managerNameC,String managerNumberC,
     Calendar planedInitialDate0 ,Calendar planedFinalDate0
@@ -68,10 +70,11 @@ public class Controller {
 
 
 
-	
+
     /** 
+     * this method search's an available position on the projects array
      * @return int
-     */
+    */
 
     public int posAvailable(){
 		int pos = -1;
@@ -92,6 +95,7 @@ public class Controller {
 
     
     /** 
+     * 
      * @param searchProjectPosition
      * @param id
      * @param capsuleDescription
@@ -100,7 +104,7 @@ public class Controller {
      * @param colabPosition
      * @param lectionLearned
      * @return String
-     */
+    */
     // Case 2
 
     public String registerCapsule(String searchProjectPosition, int id,String capsuleDescription,String type ,
@@ -124,6 +128,12 @@ public class Controller {
 
         
     }
+    
+    /** 
+     * 
+     * @param searchProjectByName
+     * @return int
+     */
     // search project position
 
     public int searchProjectPosition(String searchProjectByName){
@@ -146,6 +156,14 @@ public class Controller {
 
     }
 
+    
+    /** 
+     * 
+     * @param searchProjectByName
+     * @param searchStageByName
+     * @param id
+     * @return String
+     */
     // Case 3
     public String approveCapsule(String searchProjectByName, String searchStageByName,int id){
 
@@ -163,6 +181,14 @@ public class Controller {
 
     }
 
+    
+    /** 
+     * 
+     * @param searchProjectByName
+     * @param searchStageByName
+     * @param id
+     * @return String
+     */
     // Case 4
 
     public String publishCapsule(String searchProjectByName, String searchStageByName,int id){
@@ -179,6 +205,13 @@ public class Controller {
         return msg;
         
     }
+
+    
+    /** 
+     * 
+     * @param searchProjectByName
+     * @return String
+    */
 
     // Case 5
     public String changeStage(String searchProjectByName){
