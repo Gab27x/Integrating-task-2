@@ -19,7 +19,8 @@ public class Stage{
     solo la etapa de inicio queda activa. 
 
     */
-    private String name;
+    //StageType
+    private StageType name;
     private Calendar planedInitialDate;
     private Calendar planedFinalDate;
     private Calendar realInitialDate;
@@ -28,7 +29,7 @@ public class Stage{
     
     
 
-    public Stage(String name, boolean isActive,Calendar planedInitialDate,Calendar planedFinalDate ){
+    public Stage(StageType name, boolean isActive,Calendar planedInitialDate,Calendar planedFinalDate ){
         this.name = name;
         this.isActive = isActive;
         capsules = new Capsule[NUM_CAPSULS];
@@ -40,11 +41,11 @@ public class Stage{
 
     // getters and setters
 
-    public String getName() {
+    public StageType getName() {
         return this.name;
     }
 
-    public void setName(String name) {
+    public void setName(StageType name) {
         this.name = name;
     }
 
@@ -123,7 +124,8 @@ public class Stage{
      * @param lectionLearned
      * @return String
      */
-    public String registerCapsule(int id,String capsuleDescription,String type ,
+    //case 2
+    public String registerCapsule(int id,String capsuleDescription,int type ,
     String colabName, String colabPosition, String lectionLearned){
         int pos = capsuleAvailable();
 
@@ -131,7 +133,23 @@ public class Stage{
         
         if (pos != -1){
             
-            capsules[pos]= new Capsule(id, capsuleDescription,type , colabName, 
+            //    TECHNICAL, MANAGEMENT, DOMAIN , EXPERIENCES 
+
+			CapsuleType capsuleType; 
+			if(type == 1){
+				capsuleType = CapsuleType.TECHNICAL; 
+			}
+			else if(type == 2){
+				capsuleType = CapsuleType.MANAGEMENT; 
+			}
+			else if(type == 3){
+				capsuleType = CapsuleType.DOMAIN; 
+			}
+			else{
+				capsuleType = CapsuleType.EXPERIENCES;
+			}
+
+            capsules[pos]= new Capsule(id, capsuleDescription,capsuleType , colabName, 
             colabPosition, lectionLearned);
 
             msg = "Capsule registered successfully";
@@ -212,6 +230,7 @@ public class Stage{
         public String publishCapsule(int id){
             String msg = "";
             int pos = searchPosById(id);
+
 
             if(pos != -1){
                 capsules[pos].setIsTheCapsulePublished(true);

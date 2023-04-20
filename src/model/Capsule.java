@@ -18,7 +18,8 @@ public class Capsule {
 
     private String capsuleDescription;
 
-    private String type;
+    // CapsuleType
+    private CapsuleType type;
 
     private String colabName;
 
@@ -31,7 +32,7 @@ public class Capsule {
     private boolean isTheCapsulePublished = false;
 
 
-    public Capsule(int id, String capsuleDescription, String type, String colabName, String colabPosition,
+    public Capsule(int id, String capsuleDescription, CapsuleType type, String colabName, String colabPosition,
      String lectionLearned) {
 
         this.id = id;
@@ -75,11 +76,11 @@ public class Capsule {
         this.capsuleDescription = capsulDescription;
     }
 
-    public String getType() {
+    public CapsuleType getType() {
         return this.type;
     }
 
-    public void setType(String type) {
+    public void setType(CapsuleType type) {
         this.type = type;
     }
 

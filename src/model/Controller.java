@@ -96,7 +96,7 @@ public class Controller {
     
     /** 
      * this method allows to register a capsule
-     * @param searchProjectPosition
+     * @param searchProjectByName
      * @param id
      * @param capsuleDescription
      * @param type
@@ -107,11 +107,11 @@ public class Controller {
     */
     // Case 2
 
-    public String registerCapsule(String searchProjectPosition, int id,String capsuleDescription,String type ,
+    public String registerCapsule(String searchProjectByName, int id,String capsuleDescription,int type ,
     String colabName, String colabPosition, String lectionLearned){
 
-        int pos =searchProjectPosition(searchProjectPosition);
-        String msg = "";
+        int pos =searchProjectPosition(searchProjectByName);
+        String msg = "no";
         if (pos!= -1){
 
             msg = projects[pos].registerCapsule(id, capsuleDescription,type , colabName, 
@@ -140,7 +140,7 @@ public class Controller {
         int pos=-1;
         boolean projectFound = false;
         for(int i=0; i<SIZE && !projectFound;i++){
-            while(projects[i] != null){
+            //while(projects[i] != null){
                 if(projects[i].getProjectName().equalsIgnoreCase(searchProjectByName) && projects[i]!= null ){
                     projectFound = true;
                     pos=i;
@@ -148,7 +148,7 @@ public class Controller {
     
                 }
 
-            }
+            //}
 
 
         }
@@ -164,8 +164,9 @@ public class Controller {
      * @param id
      * @return String
      */
+
     // Case 3
-    public String approveCapsule(String searchProjectByName, String searchStageByName,int id){
+    public String approveCapsule(String searchProjectByName, int searchStageByName,int id){
 
         int pos =searchProjectPosition(searchProjectByName);
         String msg = "";
@@ -191,7 +192,7 @@ public class Controller {
     */
     // Case 4
 
-    public String publishCapsule(String searchProjectByName, String searchStageByName,int id){
+    public String publishCapsule(String searchProjectByName, int searchStageByName,int id){
         int pos =searchProjectPosition(searchProjectByName);
         String msg = "";
 

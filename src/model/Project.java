@@ -51,14 +51,20 @@ public class Project {
         this.managerNameC = managerNameC;
         this.managerNumberC = managerNumberC; 
 
-          
+        //StageType.START
+        //StageType.ANALYSIS
+        //StageType.DESIGN
+        //StageType.EXECUTION
+        //StageType.CLOSURE
+        //StageType.PROJECT_CONTROL
 
-        this.stages[0] = new Stage("start", true, planedInitialDate0 , planedFinalDate0 );
-        this.stages[1] = new Stage("analysis", false   , planedInitialDate1 , planedFinalDate1 );
-        this.stages[2] = new Stage("design", false, planedInitialDate2 , planedFinalDate2);
-        this.stages[3] = new Stage("execution", false  , planedInitialDate3 , planedFinalDate3);
-        this.stages[4] = new Stage("closure ", false, planedInitialDate4 , planedFinalDate4);
-        this.stages[5] = new Stage("project control", false , planedInitialDate5 , planedFinalDate5 );
+
+        this.stages[0] = new Stage(StageType.START, true, planedInitialDate0 , planedFinalDate0 );
+        this.stages[1] = new Stage(StageType.ANALYSIS, false   , planedInitialDate1 , planedFinalDate1 );
+        this.stages[2] = new Stage(StageType.DESIGN, false, planedInitialDate2 , planedFinalDate2);
+        this.stages[3] = new Stage(StageType.EXECUTION, false  , planedInitialDate3 , planedFinalDate3);
+        this.stages[4] = new Stage(StageType.CLOSURE, false, planedInitialDate4 , planedFinalDate4);
+        this.stages[5] = new Stage(StageType.PROJECT_CONTROL, false , planedInitialDate5 , planedFinalDate5 );
 
     }
 
@@ -132,15 +138,17 @@ public class Project {
      * @param colabPosition
      * @param lectionLearned
      * @return String
-     */
+    */
+
     // case 2
-   public String registerCapsule(int id,String capsuleDescription,String type ,
+   public String registerCapsule(int id,String capsuleDescription,int type ,
    String colabName, String colabPosition, String lectionLearned){
         int pos = activeStagePos();
         String msg="";
 
         if(pos != -1){
-            msg= stages[pos].registerCapsule(id, capsuleDescription,type , colabName, 
+
+            msg= stages[pos].registerCapsule(id, capsuleDescription, type , colabName, 
             colabPosition, lectionLearned);
         }
         else if (pos == -1){
@@ -158,14 +166,42 @@ public class Project {
      * @param id
      * @return String
      */
-    // case 3
 
-    public String approveCapsule(String searchStageByName,int id){
+    // case 3
+    
+    public String approveCapsule(int searchStageByName,int id){
 
         int pos= activeStagePos();
         String msg = "";
+        
+//StageType.START
+//StageType.ANALYSIS
+//StageType.DESIGN
+//StageType.EXECUTION
+//StageType.CLOSURE
+//StageType.PROJECT_CONTROL
 
-        if (pos!= -1 && stages[pos].getName().equalsIgnoreCase(searchStageByName)){
+        StageType searchStageByNameStageType; 
+        if(searchStageByName == 1){
+            searchStageByNameStageType = StageType.START; 
+        }
+        else if(searchStageByName == 2){
+            searchStageByNameStageType = StageType.ANALYSIS; 
+        }
+        else if(searchStageByName == 3){
+            searchStageByNameStageType = StageType.DESIGN; 
+        }
+        else if(searchStageByName == 4){
+            searchStageByNameStageType = StageType.EXECUTION; 
+        }
+        else if(searchStageByName == 5){
+            searchStageByNameStageType = StageType.CLOSURE; 
+        }
+        else{
+            searchStageByNameStageType = StageType.PROJECT_CONTROL;
+        }
+
+        if (pos!= -1 && stages[pos].getName() == searchStageByNameStageType){
 
             msg=stages[pos].approveCapsule(id);
             
@@ -190,12 +226,32 @@ public class Project {
         */
         
         // case 4
-        public String publishCapsule(String searchStageByName,int id){
+        public String publishCapsule(int searchStageByName,int id){
 
             int pos= activeStagePos();
             String msg = "";
+            StageType searchStageByNameStageType; 
+            if(searchStageByName == 1){
+                searchStageByNameStageType = StageType.START; 
+            }
+            else if(searchStageByName == 2){
+                searchStageByNameStageType = StageType.ANALYSIS; 
+            }
+            else if(searchStageByName == 3){
+                searchStageByNameStageType = StageType.DESIGN; 
+            }
+            else if(searchStageByName == 4){
+                searchStageByNameStageType = StageType.EXECUTION; 
+            }
+            else if(searchStageByName == 5){
+                searchStageByNameStageType = StageType.CLOSURE; 
+            }
+            else{
+                searchStageByNameStageType = StageType.PROJECT_CONTROL;
+            }
+
     
-            if (pos!= -1 && stages[pos].getName().equalsIgnoreCase(searchStageByName)){
+            if (pos!= -1 && stages[pos].getName()==searchStageByNameStageType){
     
                 msg=stages[pos].publishCapsule(id);
                 

@@ -2,11 +2,9 @@ package ui;
 
 import java.util.Calendar;
 import java.util.Scanner;
-
-
 import model.Controller;
-
 import java.text.SimpleDateFormat;
+
 
 public class Main {
     private Scanner input;
@@ -43,13 +41,38 @@ public class Main {
      */
 
     // menu
+    /*
+    Informar al usuario cuantas de las cápsulas registradas hay por cada tipo de cápsula
+    (técnico, gestión, dominio y experiencias)
+
+    Informar al usuario un listado de lecciones aprendidas correspondientes a las cápsulas
+    registradas en los proyectos para una etapa en particular
+
+    Informar al usuario el nombre del proyecto con más cápsulas registradas
+
+    Informar al usuario si un colaborador (por el nombre) ha registrado cápsulas en algún
+    proyecto.
+
+    Informar al usuario las situaciones y lecciones aprendidas de las cápsulas aprobadas
+    y publicadas, de acuerdo a una cadena de búsqueda dada por él mismo. Esta cadena
+    de búsqueda deberá ser encontrada en los hashtag. 
+    
+    */
     public void menu(){
         System.out.println("\n0. Exit\n" +
                     "1. Create project \n"+
                     "2. Register capsule\n"+
                     "3. Approve capsule\n"+
                     "4. Publish capsule\n"+
-                    "5. Complete a stage of a project\n" );
+                    "5. Complete a stage of a project\n" +
+
+                    "6. Register capsule\n"+
+                    "7. Approve capsule\n"+
+                    "8. Publish capsule\n"+
+                    "9. Complete a stage of a project\n" 
+                    
+                    
+                    );
 
 
 
@@ -79,6 +102,9 @@ public class Main {
                 publishCapsule();
 				break;
             case 5:
+                changeStage();
+				break;
+            case 6:
                 changeStage();
 				break;
 		}
@@ -226,11 +252,25 @@ public class Main {
         String capsuleDescription = input.nextLine();
         System.out.println(capsuleDescription);
 
-        System.out.println("\nEnter capsule type");
-        String type = input.nextLine();
+
+
+        int type;
+
+        do{
+
+        System.out.println("Select capsule type:"); 
+        System.out.println(" 1. for TECHNICAL");
+        System.out.println(" 2. for MANAGEMENT");
+        System.out.println(" 3. for DOMAIN");
+        System.out.println(" 4. for EXPERIENCES");
+
+        type = input.nextInt();
+
+        }while( !(type>=1 && type<=4));  
         System.out.println(type);
 
-
+        input.nextLine(); // clean buffer
+        
         System.out.println("\nEnter collaborator name");
         String colabName = input.nextLine();
         System.out.println(colabName);
@@ -255,7 +295,7 @@ public class Main {
      * This method allows to approve a capsule
      */
     public void approvecapsule(){
-        int option = 0;
+        
 
         // change to next line
         input.nextLine(); // clean buffer
@@ -263,6 +303,8 @@ public class Main {
         System.out.println("\nEnter project name");
         String searchProjectByName = input.nextLine();
         
+        int searchStageByName = -1 ;
+
         do{
             System.out.println("\nSelect stage by name\n" +
             "1. start \n"+
@@ -271,39 +313,11 @@ public class Main {
             "4. execution\n"+
             "5. closure\n"+
             "6. project control\n");
-            option= input.nextInt();
-        }while( !(option>0 && option<=6) );
+            searchStageByName= input.nextInt();
+        }while( !(searchStageByName>0 && searchStageByName<=6) );
 
-        String searchStageByName ="";
-
-        switch(option){
-
-            case 1:
-            searchStageByName = "start"  ;
-            break;
-
-            case 2:
-            searchStageByName = "analysis" ;
-            break;
-
-            case 3:
-            searchStageByName =  "design" ;
-            break;
-
-            case 4:
-            searchStageByName =  "execution" ;
-            break;
-
-            case 5:
-            searchStageByName =   "closure ";
-            break;
-
-            case 6:
-            searchStageByName =  "project control";
-            break;
-
-        }
-
+        
+        
 
         System.out.println("\nEnter Capsule id");
         int id = input.nextInt();
@@ -337,37 +351,18 @@ public class Main {
             "6. project control\n");
             option= input.nextInt();
         }while( !(option>0 && option<=6) );
-
-        String searchStageByName ="";
-
-        switch(option){
-
-            case 1:
-            searchStageByName = "start"  ;
-            break;
-
-            case 2:
-            searchStageByName = "analysis" ;
-            break;
-
-            case 3:
-            searchStageByName =  "design" ;
-            break;
-
-            case 4:
-            searchStageByName =  "execution" ;
-            break;
-
-            case 5:
-            searchStageByName =   "closure ";
-            break;
-
-            case 6:
-            searchStageByName =  "project control";
-            break;
-
-        }
-
+        
+        int searchStageByName = -1;
+        do{
+            System.out.println("\nSelect stage by name\n" +
+            "1. start \n"+
+            "2. analysis\n"+
+            "3. design\n"+
+            "4. execution\n"+
+            "5. closure\n"+
+            "6. project control\n");
+            searchStageByName= input.nextInt();
+        }while( !(searchStageByName>0 && searchStageByName<=6) );
 
         System.out.println("\nEnter Capsule id");
         int id = input.nextInt();
