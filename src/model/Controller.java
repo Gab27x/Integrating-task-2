@@ -230,6 +230,30 @@ public class Controller {
           
     }
 
+    //case 6
+    public String showNumOfEveryStageType(String searchProjectByName, int searchStageByName){
+        String msg = "no";
+        int pos = searchProjectPosition(searchProjectByName);
 
+        if (pos != -1){
+            msg=projects[pos].showNumOfEveryStageType(searchStageByName);
+
+        }
+        else{
+
+            msg="project has not been Found";
+        }
+
+
+
+
+
+
+
+
+        return msg;
+
+
+    }
     
 }

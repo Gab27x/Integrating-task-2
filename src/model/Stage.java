@@ -6,6 +6,12 @@ import java.util.Calendar;
 public class Stage{
     public static final int NUM_CAPSULS = 50;
     private Capsule[] capsules;
+    private int numOfTechicalCapsules = 0;
+    private int numOfManagementCapsules = 0;
+    private int numOfDomainCapsules = 0;
+    private int numOfExperiencesCapsules = 0;
+
+
     /*
     Cuando se crea el proyecto, automáticamente se crean sus 6 etapas:
     1.	inicio
@@ -40,6 +46,37 @@ public class Stage{
 
 
     // getters and setters
+    public int getNumOfTechicalCapsules() {
+        return this.numOfTechicalCapsules;
+    }
+
+    public void setNumOfTechicalCapsules(int numOfTechicalCapsules) {
+        this.numOfTechicalCapsules = numOfTechicalCapsules;
+    }
+
+    public int getNumOfManagementCapsules() {
+        return this.numOfManagementCapsules;
+    }
+
+    public void setNumOfManagementCapsules(int numOfManagementCapsules) {
+        this.numOfManagementCapsules = numOfManagementCapsules;
+    }
+
+    public int getNumOfDomainCapsules() {
+        return this.numOfDomainCapsules;
+    }
+
+    public void setNumOfDomainCapsules(int numOfDomainCapsules) {
+        this.numOfDomainCapsules = numOfDomainCapsules;
+    }
+
+    public int getNumOfExperiencesCapsules() {
+        return this.numOfExperiencesCapsules;
+    }
+
+    public void setNumOfExperiencesCapsules(int numOfExperiencesCapsules) {
+        this.numOfExperiencesCapsules = numOfExperiencesCapsules;
+    }
 
     public StageType getName() {
         return this.name;
@@ -138,15 +175,21 @@ public class Stage{
 			CapsuleType capsuleType; 
 			if(type == 1){
 				capsuleType = CapsuleType.TECHNICAL; 
+                numOfTechicalCapsules +=1;
+
 			}
 			else if(type == 2){
 				capsuleType = CapsuleType.MANAGEMENT; 
+                numOfManagementCapsules +=1;
 			}
+
 			else if(type == 3){
 				capsuleType = CapsuleType.DOMAIN; 
+                numOfDomainCapsules +=1;
 			}
 			else{
 				capsuleType = CapsuleType.EXPERIENCES;
+                numOfExperiencesCapsules +=1;
 			}
 
             capsules[pos]= new Capsule(id, capsuleDescription,capsuleType , colabName, 

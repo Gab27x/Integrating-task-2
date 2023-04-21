@@ -5,6 +5,9 @@ import java.util.Calendar;
 public class Project {
     private static final int NUM_STAGES = 6;
     private Stage[] stages = new Stage[NUM_STAGES] ;
+
+
+     //    TECHNICAL, MANAGEMENT, DOMAIN , EXPERIENCES 
 /*
     Un proyecto de un cliente se debe almacenar:
     1.	nombre del proyecto =)
@@ -303,7 +306,56 @@ public class Project {
         return msg;
         
     }
+        //case 6
+        public String showNumOfEveryStageType(int searchStageByName){
+            String msg = "no2";
+            //    TECHNICAL, MANAGEMENT, DOMAIN , EXPERIENCES 
+            if(searchStageByName == 1 && stages[0]!=null){
+                msg= "TECHNICAL Capsules: "+ Integer.toString(stages[0].getNumOfTechicalCapsules()) + "\n" 
+                + "MANAGEMENT Capsules: "+ Integer.toString(stages[0].getNumOfManagementCapsules()) + "\n"
+                +"DOMAIN Capsules: " +Integer.toString(stages[0].getNumOfDomainCapsules()) + "\n"
+                +"EXPERIENCES Capsules: "+ Integer.toString(stages[0].getNumOfExperiencesCapsules()) + "\n";
+                 
+            }
+            else if(searchStageByName == 2 && stages[1]!=null){
+                msg= "TECHNICAL Capsules: "+ Integer.toString(stages[1].getNumOfTechicalCapsules()) + "\n" 
+                + "MANAGEMENT Capsules: "+ Integer.toString(stages[1].getNumOfManagementCapsules()) + "\n"
+                +"DOMAIN Capsules: " +Integer.toString(stages[1].getNumOfDomainCapsules()) + "\n"
+                +"EXPERIENCES Capsules: "+ Integer.toString(stages[1].getNumOfExperiencesCapsules()) + "\n";
+            }
+            else if(searchStageByName == 3 && stages[2]!=null){
+                msg= "TECHNICAL Capsules: "+ Integer.toString(stages[2].getNumOfTechicalCapsules()) + "\n" 
+                + "MANAGEMENT Capsules: "+ Integer.toString(stages[2].getNumOfManagementCapsules()) + "\n"
+                +"DOMAIN Capsules: " +Integer.toString(stages[2].getNumOfDomainCapsules()) + "\n"
+                +"EXPERIENCES Capsules: "+ Integer.toString(stages[2].getNumOfExperiencesCapsules()) + "\n";
+            }
+            else if(searchStageByName == 4 && stages[3]!=null){
+                msg= "TECHNICAL Capsules: "+ Integer.toString(stages[3].getNumOfTechicalCapsules()) + "\n" 
+                + "MANAGEMENT Capsules: "+ Integer.toString(stages[3].getNumOfManagementCapsules()) + "\n"
+                +"DOMAIN Capsules: " +Integer.toString(stages[3].getNumOfDomainCapsules()) + "\n"
+                +"EXPERIENCES Capsules: "+ Integer.toString(stages[3].getNumOfExperiencesCapsules()) + "\n";
+            }
+            else if(searchStageByName == 5 && stages[4]!=null){
+                msg= "TECHNICAL Capsules: "+ Integer.toString(stages[4].getNumOfTechicalCapsules()) + "\n" 
+                + "MANAGEMENT Capsules: "+ Integer.toString(stages[4].getNumOfManagementCapsules()) + "\n"
+                +"DOMAIN Capsules: " +Integer.toString(stages[4].getNumOfDomainCapsules()) + "\n"
+                +"EXPERIENCES Capsules: "+ Integer.toString(stages[4].getNumOfExperiencesCapsules()) + "\n";
+            }
+            else if(searchStageByName == 6 && stages[5]!=null){
+                msg= "TECHNICAL Capsules: "+ Integer.toString(stages[5].getNumOfTechicalCapsules()) + "\n" 
+                + "MANAGEMENT Capsules: "+ Integer.toString(stages[5].getNumOfManagementCapsules()) + "\n"
+                +"DOMAIN Capsules: " +Integer.toString(stages[5].getNumOfDomainCapsules()) + "\n"
+                +"EXPERIENCES Capsules: "+ Integer.toString(stages[5].getNumOfExperiencesCapsules()) + "\n";
+            }
 
+
+            return msg;
+    
+    
+    
+    
+    
+        }
 
 
 }

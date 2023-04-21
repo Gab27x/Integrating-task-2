@@ -66,10 +66,15 @@ public class Main {
                     "4. Publish capsule\n"+
                     "5. Complete a stage of a project\n" +
 
-                    "6. Register capsule\n"+
-                    "7. Approve capsule\n"+
-                    "8. Publish capsule\n"+
-                    "9. Complete a stage of a project\n" 
+                    "6. Show how many capsules are registered for each type of capsule\n"+
+
+                    "7. Display a list of the lessons learned corresponding to the capsules recorded in the projects for a particular stage\n"+
+
+                    "8. Give the name of the project with the most capsules recorded\n"+
+
+                    "9. Inform if a collaborator (by name) has registered capsules in any project.\n" +
+
+                    "10. Complete a stage of a project\n"
                     
                     
                     );
@@ -105,7 +110,15 @@ public class Main {
                 changeStage();
 				break;
             case 6:
-                changeStage();
+                showNumOfEveryStageType();
+				break;
+            case 7:
+				break;
+            case 8:
+				break;
+            case 9:
+				break;
+            case 10:
 				break;
 		}
 
@@ -333,7 +346,6 @@ public class Main {
      */
     public void publishCapsule(){
 
-        int option = 0;
 
         // change to next line
         input.nextLine(); // clean buffer
@@ -341,17 +353,7 @@ public class Main {
         System.out.println("\nEnter project name");
         String searchProjectByName = input.nextLine();
         
-        do{
-            System.out.println("\nSelect stage by name\n" +
-            "1. start \n"+
-            "2. analysis\n"+
-            "3. design\n"+
-            "4. execution\n"+
-            "5. closure\n"+
-            "6. project control\n");
-            option= input.nextInt();
-        }while( !(option>0 && option<=6) );
-        
+
         int searchStageByName = -1;
         do{
             System.out.println("\nSelect stage by name\n" +
@@ -385,6 +387,39 @@ public class Main {
         
         
     }
+
+    //case 6
+    public void showNumOfEveryStageType(){
+        input.nextLine(); // clean buffer
+
+        System.out.println("\nEnter project name");
+        String searchProjectByName = input.nextLine();
+        
+
+        int searchStageByName = -1;
+        do{
+            System.out.println("\nSelect stage by name\n" +
+            "1. start \n"+
+            "2. analysis\n"+
+            "3. design\n"+
+            "4. execution\n"+
+            "5. closure\n"+
+            "6. project control\n");
+            searchStageByName= input.nextInt();
+        }while( !(searchStageByName>0 && searchStageByName<=6) );
+
+        
+        System.out.println(controller.showNumOfEveryStageType(searchProjectByName,searchStageByName));
+
+
+
+
+    }
+    //case 7
+    //case 8
+    //case 9
+    //case 10
+
 
 
 
@@ -450,6 +485,93 @@ public class Main {
     
 
 }
+
+/*
+crear el metodo
+
+// atributos
+        // Create an array to store extracted keywords
+        String[] extractedKeywords = new String[10]; // assuming a maximum of 10 keywords
+        int numKeywords = 0; // counter for number of extracted keywords
+        
+        //parametro
+        String inputString = "This is a #sample string# with #keywords# to extract";
+        
+        //proceso
+        // Find the indices of "#" characters
+        int startIndex = inputString.indexOf("#");
+        int endIndex = inputString.indexOf("#", startIndex + 1);
+        
+        // Loop through the input string to extract keywords
+        while (startIndex != -1 && endIndex != -1 && endIndex > startIndex + 1) {
+            // Extract the keyword between "#" characters
+            String keyword = inputString.substring(startIndex + 1, endIndex);
+            
+            // Add the keyword to the array
+            extractedKeywords[numKeywords++] = keyword;
+            
+            // Update startIndex and endIndex for next iteration
+            startIndex = inputString.indexOf("#", endIndex + 1);
+            endIndex = inputString.indexOf("#", startIndex + 1);
+        }
+        
+        
+        // mostrar
+        // Print out the extracted keywords
+        if (numKeywords > 0) {
+            System.out.println("Input String: " + inputString);
+            System.out.println("Extracted keywords: ");
+            for (int i = 0; i < numKeywords; i++) {
+                System.out.println("- " + extractedKeywords[i]);
+            }
+        } else {
+            System.out.println("No keywords found");
+        }
+    }
+}
+
+
+// codigo original
+
+public class KeywordExtractor {
+    public static void main(String[] args) {
+        String inputString = "This is a #sample string# with #keywords# to extract";
+        
+        // Find the indices of "#" characters
+        int startIndex = inputString.indexOf("#");
+        int endIndex = inputString.indexOf("#", startIndex + 1);
+        
+        // Create an array to store extracted keywords
+        String[] extractedKeywords = new String[10]; // assuming a maximum of 10 keywords
+        int numKeywords = 0; // counter for number of extracted keywords
+        
+        // Loop through the input string to extract keywords
+        while (startIndex != -1 && endIndex != -1 && endIndex > startIndex + 1) {
+            // Extract the keyword between "#" characters
+            String keyword = inputString.substring(startIndex + 1, endIndex);
+            
+            // Add the keyword to the array
+            extractedKeywords[numKeywords++] = keyword;
+            
+            // Update startIndex and endIndex for next iteration
+            startIndex = inputString.indexOf("#", endIndex + 1);
+            endIndex = inputString.indexOf("#", startIndex + 1);
+        }
+        
+        // Print out the extracted keywords
+        if (numKeywords > 0) {
+            System.out.println("Input String: " + inputString);
+            System.out.println("Extracted keywords: ");
+            for (int i = 0; i < numKeywords; i++) {
+                System.out.println("- " + extractedKeywords[i]);
+            }
+        } else {
+            System.out.println("No keywords found");
+        }
+    }
+}
+
+ */
 
 
 
