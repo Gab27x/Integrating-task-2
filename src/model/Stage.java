@@ -213,7 +213,7 @@ public class Stage{
      * this method search the position of a capsule using the id
      * @param id
      * @return int
-     */
+    */
     public int searchPosById(int id){
         int pos = -1;
         boolean capsuleFound = false;
@@ -269,26 +269,58 @@ public class Stage{
          * @return String
          */
         // case 4
+    public String publishCapsule(int id){
+        String msg = "";
+        int pos = searchPosById(id);
 
-        public String publishCapsule(int id){
-            String msg = "";
-            int pos = searchPosById(id);
 
+        if(pos != -1){
+            capsules[pos].setIsTheCapsulePublished(true);
+            msg = "capsule published" ;
 
-            if(pos != -1){
-                capsules[pos].setIsTheCapsulePublished(true);
-                msg = "capsule published" ;
-
-            }
-            else{
-                msg="The capsule is not approved";
-
-            }
-            return msg; 
-    
-    
         }
+        else{
+            msg="The capsule is not approved";
 
+        }
+        return msg; 
+    
+    
+    }
+
+    //case 7
+    public String listLessonsLearnedOfProjectForAStage( ){
+        String msg ="no";
+
+        for(int i=0;i<NUM_CAPSULS;i++){
+          if(capsules[i] != null){
+            msg+="\n\t Capsule "+(i+1)+ "\n"+ "Lection learned: "+capsules[i].getLectionLearned();
+          }
+            
+        }               
+
+           
+        return msg;
+    }
+
+
+    //case 9
+    public boolean checkCollaboratorsCapsulesInProjects(String searchCollaboratorNameInCapsules){
+        boolean collaboratorFound =false;
+        for(int i=0;i<NUM_CAPSULS && !collaboratorFound;i++){
+            if(capsules[i]!=null&& capsules[i].getColabName().equalsIgnoreCase(searchCollaboratorNameInCapsules)){
+                collaboratorFound = true;
+            }
+
+            
+        }
+    
+        return collaboratorFound;
+    }
 
 
 }
+    
+
+
+

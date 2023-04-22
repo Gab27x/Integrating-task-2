@@ -5,11 +5,13 @@ import java.util.Calendar;
 public class Controller {
 	public static final int SIZE = 10;
 	private Project[] projects;
+    private String[] keywords;
+    public static final int NUM_KEYWORDS = 100;
 
 	public Controller() {
 
 		projects = new Project[SIZE];
-	
+        keywords = new String[NUM_KEYWORDS];
 	}
 
     
@@ -116,6 +118,8 @@ public class Controller {
 
             msg = projects[pos].registerCapsule(id, capsuleDescription,type , colabName, 
             colabPosition, lectionLearned );
+            addKeyWords(lectionLearned);
+            eliminateDuplicate();
         }
         else{
             msg = "project has not been Found";
@@ -231,12 +235,12 @@ public class Controller {
     }
 
     //case 6
-    public String showNumOfEveryStageType(String searchProjectByName, int searchStageByName){
+    public String showNumOfEveryCapsuleType(String searchProjectByName, int searchStageByName){
         String msg = "no";
         int pos = searchProjectPosition(searchProjectByName);
 
         if (pos != -1){
-            msg=projects[pos].showNumOfEveryStageType(searchStageByName);
+            msg=projects[pos].showNumOfEveryCapsuleType(searchStageByName);
 
         }
         else{
@@ -244,16 +248,134 @@ public class Controller {
             msg="project has not been Found";
         }
 
+        return msg;
+
+    }
+    
+    //case 7
+    public String listLessonsLearnedOfProjectForAStage(String searchProjectByName,int searchStageByName){
+        String msg ="";
+        int pos = searchProjectPosition(searchProjectByName);
+
+        if(pos!=-1){
+            msg= projects[pos].listLessonsLearnedOfProjectForAStage(searchStageByName);
+
+        }
+        else{
+            msg="project has not been Found";
+        }
+        return msg;
+    }
 
 
+    //case 8
+    public String getNameOfTheProjectWithMoreCapsules(){
+        int pos = getPosOfTheProjectWithMoreCapsules();
+        String msg ="The project with the most amout of capsules is: "+ projects[pos].getProjectName();
+        
+        return msg;
 
+    }
 
+    public int getPosOfTheProjectWithMoreCapsules(){
+        int projectWithMoreCapsulesPos = 0;
+        int maxCapsules = 0;
 
+        for(int i=0;i<SIZE;i++){
+            if(projects[i]!=null){
+                if(i==0){
+                    maxCapsules=projects[0].getTotalCapsules();
+                    projectWithMoreCapsulesPos = 0;
+                }
+                else{
+                    if(projects[i].getTotalCapsules()>maxCapsules && projects[i]!=null){
+                        projectWithMoreCapsulesPos = i;
+    
+    
+                    }
+    
+                }
 
+            }
+            
 
+ 
+        }
+        return projectWithMoreCapsulesPos;
+
+    }
+
+    //case 9
+    public String checkCollaboratorsCapsulesInProjects(String searchCollaboratorNameInCapsules){
+        String msg ="The collaborator has not registered any capsule";
+        boolean collaboratorFound =false;
+        for(int i=0;i<SIZE && !collaboratorFound;i++){
+            if(projects[i]!=null && projects[i].checkCollaboratorsCapsulesInProjects(searchCollaboratorNameInCapsules)){
+
+                msg="The collaborator has registed at least 1 capsule in the project: "+projects[i].getProjectName();
+                collaboratorFound = true;
+            }
+        
+        }
+        return msg;
+    }
+
+    //case 10
+
+    //add key words
+    public void addKeyWords(String lectionLearned){
+        int startIndex = lectionLearned.indexOf("#");
+        int endIndex = lectionLearned.indexOf("#", startIndex + 1);
+    
+        while (startIndex != -1 && endIndex != -1 && endIndex > startIndex + 1) {
+            String keyword = lectionLearned.substring(startIndex + 1, endIndex);
+            // Add the keyword to the array
+            int pos = getAvailablePosKeyWords();
+            if(pos !=-1){
+                keywords[pos] = keyword;     
+                // Update startIndex and endIndex for next iteration
+                startIndex = lectionLearned.indexOf("#", endIndex + 1);
+                endIndex = lectionLearned.indexOf("#", startIndex + 1);
+            }
+            else{
+                break;
+            }
+  
+        }
+    }
+    // eliminate duplicate
+    public void eliminateDuplicate(){
+        for(int i =0;i<NUM_KEYWORDS;i++){
+            for(int j =0;i<NUM_KEYWORDS-1;j++){
+                if(keywords[i]!=null && keywords[j] !=null){
+                    if(keywords[i].equalsIgnoreCase(keywords[j])){
+                        keywords[i]=null;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    public int getAvailablePosKeyWords(){
+        int pos = -1;
+        boolean posFound = false;
+        for(int i =0;i<NUM_KEYWORDS && !posFound ;i++){
+            posFound = true;
+            pos = 1;
+        }
+        return pos;
+    }
+    public String searchLessonByKeyWords(String keyword){
+        String msg="";
+
+        
         return msg;
 
 
     }
-    
 }

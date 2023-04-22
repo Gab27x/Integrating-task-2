@@ -1,24 +1,12 @@
 package model;
 
 public class Capsule {
-    /*
-    Una cápsula tiene:
 
-    1.	un identificador único
-    2.	una descripción de la situación que desea registrar
-    3.	un tipo de cápsula (los tipos definidos hasta el momento son técnico,
-        gestión, dominio y experiencias), 
-    4.	el nombre colaborador
-    5. cargo del colaborador 
-    6.	el aprendizaje o lección aprendida con dicha situación
-
-    */
-    
     private int id;
 
     private String capsuleDescription;
 
-    // CapsuleType
+
     private CapsuleType type;
 
     private String colabName;

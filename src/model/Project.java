@@ -7,7 +7,7 @@ public class Project {
     private Stage[] stages = new Stage[NUM_STAGES] ;
 
 
-     //    TECHNICAL, MANAGEMENT, DOMAIN , EXPERIENCES 
+    //    TECHNICAL, MANAGEMENT, DOMAIN , EXPERIENCES 
 /*
     Un proyecto de un cliente se debe almacenar:
     1.	nombre del proyecto =)
@@ -306,56 +306,93 @@ public class Project {
         return msg;
         
     }
-        //case 6
-        public String showNumOfEveryStageType(int searchStageByName){
-            String msg = "no2";
+    //case 6
+    public String showNumOfEveryCapsuleType(int searchStageByName){
+        String msg = "no2";
             //    TECHNICAL, MANAGEMENT, DOMAIN , EXPERIENCES 
-            if(searchStageByName == 1 && stages[0]!=null){
+        if(searchStageByName == 1 && stages[0]!=null){
                 msg= "TECHNICAL Capsules: "+ Integer.toString(stages[0].getNumOfTechicalCapsules()) + "\n" 
                 + "MANAGEMENT Capsules: "+ Integer.toString(stages[0].getNumOfManagementCapsules()) + "\n"
                 +"DOMAIN Capsules: " +Integer.toString(stages[0].getNumOfDomainCapsules()) + "\n"
                 +"EXPERIENCES Capsules: "+ Integer.toString(stages[0].getNumOfExperiencesCapsules()) + "\n";
                  
-            }
-            else if(searchStageByName == 2 && stages[1]!=null){
+        }
+        else if(searchStageByName == 2 && stages[1]!=null){
                 msg= "TECHNICAL Capsules: "+ Integer.toString(stages[1].getNumOfTechicalCapsules()) + "\n" 
                 + "MANAGEMENT Capsules: "+ Integer.toString(stages[1].getNumOfManagementCapsules()) + "\n"
                 +"DOMAIN Capsules: " +Integer.toString(stages[1].getNumOfDomainCapsules()) + "\n"
                 +"EXPERIENCES Capsules: "+ Integer.toString(stages[1].getNumOfExperiencesCapsules()) + "\n";
-            }
-            else if(searchStageByName == 3 && stages[2]!=null){
+        }
+        else if(searchStageByName == 3 && stages[2]!=null){
                 msg= "TECHNICAL Capsules: "+ Integer.toString(stages[2].getNumOfTechicalCapsules()) + "\n" 
                 + "MANAGEMENT Capsules: "+ Integer.toString(stages[2].getNumOfManagementCapsules()) + "\n"
                 +"DOMAIN Capsules: " +Integer.toString(stages[2].getNumOfDomainCapsules()) + "\n"
                 +"EXPERIENCES Capsules: "+ Integer.toString(stages[2].getNumOfExperiencesCapsules()) + "\n";
-            }
-            else if(searchStageByName == 4 && stages[3]!=null){
+        }
+        else if(searchStageByName == 4 && stages[3]!=null){
                 msg= "TECHNICAL Capsules: "+ Integer.toString(stages[3].getNumOfTechicalCapsules()) + "\n" 
                 + "MANAGEMENT Capsules: "+ Integer.toString(stages[3].getNumOfManagementCapsules()) + "\n"
                 +"DOMAIN Capsules: " +Integer.toString(stages[3].getNumOfDomainCapsules()) + "\n"
                 +"EXPERIENCES Capsules: "+ Integer.toString(stages[3].getNumOfExperiencesCapsules()) + "\n";
-            }
-            else if(searchStageByName == 5 && stages[4]!=null){
+        }
+        else if(searchStageByName == 5 && stages[4]!=null){
                 msg= "TECHNICAL Capsules: "+ Integer.toString(stages[4].getNumOfTechicalCapsules()) + "\n" 
                 + "MANAGEMENT Capsules: "+ Integer.toString(stages[4].getNumOfManagementCapsules()) + "\n"
                 +"DOMAIN Capsules: " +Integer.toString(stages[4].getNumOfDomainCapsules()) + "\n"
                 +"EXPERIENCES Capsules: "+ Integer.toString(stages[4].getNumOfExperiencesCapsules()) + "\n";
-            }
-            else if(searchStageByName == 6 && stages[5]!=null){
+        }
+        else if(searchStageByName == 6 && stages[5]!=null){
                 msg= "TECHNICAL Capsules: "+ Integer.toString(stages[5].getNumOfTechicalCapsules()) + "\n" 
                 + "MANAGEMENT Capsules: "+ Integer.toString(stages[5].getNumOfManagementCapsules()) + "\n"
                 +"DOMAIN Capsules: " +Integer.toString(stages[5].getNumOfDomainCapsules()) + "\n"
                 +"EXPERIENCES Capsules: "+ Integer.toString(stages[5].getNumOfExperiencesCapsules()) + "\n";
-            }
-
-
-            return msg;
-    
-    
-    
-    
-    
         }
 
 
+        return msg;
+
+    }
+        
+    public int getTotalCapsules(){
+        int totalCapsules =0;
+        for(int i =0;i<NUM_STAGES;i++){
+            totalCapsules+=stages[i].getNumOfDomainCapsules()+stages[i].getNumOfExperiencesCapsules()
+            +stages[i].getNumOfManagementCapsules()+stages[i].getNumOfTechicalCapsules();
+
+        }
+            
+        return totalCapsules;
+
+    }
+
+    //case 7
+    public String listLessonsLearnedOfProjectForAStage(int searchStageByName){
+        String msg ="";
+        int stagePos= searchStageByName -1;
+        msg=stages[stagePos].listLessonsLearnedOfProjectForAStage();
+
+        return msg;
+    }
+    //case 9
+    public boolean checkCollaboratorsCapsulesInProjects(String searchCollaboratorNameInCapsules){
+        boolean collaboratorFound =false;
+        for(int i=0;i<NUM_STAGES && !collaboratorFound;i++){
+            if(stages[i].checkCollaboratorsCapsulesInProjects(searchCollaboratorNameInCapsules)){
+
+                collaboratorFound= true;
+            }
+            
+        }
+        return collaboratorFound;
+    
+    }
+
+
+
+   
 }
+
+
+
+
+

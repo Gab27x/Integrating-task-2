@@ -25,7 +25,7 @@ public class Main {
                 view.menu();
                 System.out.println("Select option");
                 option= view.input.nextInt();
-            }while( !(option >= 0 && option<=6) );
+            }while( !(option >= 0 && option<=10) );
 
             view.executeOption(option);
 
@@ -42,21 +42,19 @@ public class Main {
 
     // menu
     /*
-    Informar al usuario cuantas de las cápsulas registradas hay por cada tipo de cápsula
-    (técnico, gestión, dominio y experiencias)
-
-    Informar al usuario un listado de lecciones aprendidas correspondientes a las cápsulas
-    registradas en los proyectos para una etapa en particular
-
-    Informar al usuario el nombre del proyecto con más cápsulas registradas
-
-    Informar al usuario si un colaborador (por el nombre) ha registrado cápsulas en algún
-    proyecto.
-
-    Informar al usuario las situaciones y lecciones aprendidas de las cápsulas aprobadas
-    y publicadas, de acuerdo a una cadena de búsqueda dada por él mismo. Esta cadena
-    de búsqueda deberá ser encontrada en los hashtag. 
     
+
+    1 si-si
+    2 si-si
+    3 si-si
+    4 si-si
+    5 si-si
+    6 si-si
+    7 si- si
+    8 si- si
+    9 si - si
+    10 no
+
     */
     public void menu(){
         System.out.println("\n0. Exit\n" +
@@ -65,16 +63,15 @@ public class Main {
                     "3. Approve capsule\n"+
                     "4. Publish capsule\n"+
                     "5. Complete a stage of a project\n" +
-
                     "6. Show how many capsules are registered for each type of capsule\n"+
 
-                    "7. Display a list of the lessons learned corresponding to the capsules recorded in the projects for a particular stage\n"+
+                    "7. List the lessons learned of a project for a particular stage\n"+
 
                     "8. Give the name of the project with the most capsules recorded\n"+
 
                     "9. Inform if a collaborator (by name) has registered capsules in any project.\n" +
 
-                    "10. Complete a stage of a project\n"
+                    "10. Search lessons by key words in approved and published capsules\n"
                     
                     
                     );
@@ -110,15 +107,19 @@ public class Main {
                 changeStage();
 				break;
             case 6:
-                showNumOfEveryStageType();
+                showNumOfEveryCapsuleType();
 				break;
             case 7:
+                listLessonsLearnedOfProjectForAStage();
 				break;
             case 8:
+                getNameOfTheProjectWithMoreCapsules();
 				break;
             case 9:
+                checkCollaboratorsCapsulesInProjects();
 				break;
             case 10:
+                searchLessonByKeyWords();
 				break;
 		}
 
@@ -239,7 +240,7 @@ public class Main {
     }
 
     // Case 2
-        /**
+    /**
      * This method allows to register a capsule
      */
 
@@ -292,7 +293,7 @@ public class Main {
         String colabPosition = input.nextLine();
         System.out.println(colabPosition);
         
-        System.out.println("\nEnter lection learned");
+        System.out.println("\nEnter lection learned \n Keywords must be between # example #car#");
         String lectionLearned = input.nextLine();
         System.out.println(lectionLearned);
 
@@ -389,7 +390,7 @@ public class Main {
     }
 
     //case 6
-    public void showNumOfEveryStageType(){
+    public void showNumOfEveryCapsuleType(){
         input.nextLine(); // clean buffer
 
         System.out.println("\nEnter project name");
@@ -409,16 +410,59 @@ public class Main {
         }while( !(searchStageByName>0 && searchStageByName<=6) );
 
         
-        System.out.println(controller.showNumOfEveryStageType(searchProjectByName,searchStageByName));
+        System.out.println(controller.showNumOfEveryCapsuleType(searchProjectByName,searchStageByName));
 
 
 
 
     }
+
+
     //case 7
+    public void listLessonsLearnedOfProjectForAStage(){
+        input.nextLine(); // clean buffer
+
+        System.out.println("\nEnter project name");
+        String searchProjectByName = input.nextLine();
+        
+
+        int searchStageByName = -1;
+        do{
+            System.out.println("\nSelect stage by name\n" +
+            "1. start \n"+
+            "2. analysis\n"+
+            "3. design\n"+
+            "4. execution\n"+
+            "5. closure\n"+
+            "6. project control\n");
+            searchStageByName= input.nextInt();
+        }while( !(searchStageByName>0 && searchStageByName<=6) );
+        
+        System.out.println(controller.listLessonsLearnedOfProjectForAStage(searchProjectByName, searchStageByName));
+    }
+
     //case 8
+    public void getNameOfTheProjectWithMoreCapsules(){
+
+        System.out.println(controller.getNameOfTheProjectWithMoreCapsules());
+
+    }
+
     //case 9
+    public void checkCollaboratorsCapsulesInProjects(){
+        input.nextLine(); // clean buffer
+        System.out.println("Enter collaborator name");
+        String searchCollaboratorNameInCapsules= input.nextLine();
+        System.out.println(controller.checkCollaboratorsCapsulesInProjects(searchCollaboratorNameInCapsules));
+    }
+
     //case 10
+    public void searchLessonByKeyWords(){
+        input.nextLine(); // clean buffer
+        String keyword ="";
+        System.out.println("Enter keyword");
+        keyword = input.nextLine();
+    }
 
 
 
@@ -488,6 +532,26 @@ public class Main {
 
 /*
 crear el metodo
+String[] keywords = new String[10];
+int numKeywords = 0;
+
+public void addKeyWords(String lectionLearned){
+    int startIndex = inputString.indexOf("#");
+    int endIndex = inputString.indexOf("#", startIndex + 1);
+
+    while (startIndex != -1 && endIndex != -1 && endIndex > startIndex + 1) {
+        String keyword = lectionLearned.substring(startIndex + 1, endIndex);
+        // Add the keyword to the array
+        extractedKeywords[numKeywords++] = keyword;     
+        // Update startIndex and endIndex for next iteration
+        startIndex = inputString.indexOf("#", endIndex + 1);
+        endIndex = inputString.indexOf("#", startIndex + 1);
+
+        
+    }
+        
+
+}
 
 // atributos
         // Create an array to store extracted keywords
