@@ -387,7 +387,19 @@ public class Project {
     
     }
 
+    //case 10
+    public String searchLessonByKeyWords(String keyword){
+        String msg="";
+        for(int i =0;i<NUM_STAGES;i++){
+            if(stages[i].searchLessonByKeyWords(keyword)!=""){
+                msg+="\n Stage: "+stages[i].getName()+stages[i].searchLessonByKeyWords(keyword);
+            }
+            
 
+        }
+        return msg;
+
+    }
 
    
 }

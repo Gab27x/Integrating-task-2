@@ -323,42 +323,39 @@ public class Controller {
     //case 10
 
     //add key words
+
     public void addKeyWords(String lectionLearned){
         int startIndex = lectionLearned.indexOf("#");
         int endIndex = lectionLearned.indexOf("#", startIndex + 1);
-    
+
         while (startIndex != -1 && endIndex != -1 && endIndex > startIndex + 1) {
             String keyword = lectionLearned.substring(startIndex + 1, endIndex);
             // Add the keyword to the array
             int pos = getAvailablePosKeyWords();
-            if(pos !=-1){
+            if(pos != -1){
                 keywords[pos] = keyword;     
                 // Update startIndex and endIndex for next iteration
                 startIndex = lectionLearned.indexOf("#", endIndex + 1);
                 endIndex = lectionLearned.indexOf("#", startIndex + 1);
-            }
-            else{
-                break;
-            }
-  
+        } 
+        else {
+            break;
         }
     }
+}
+
+    
     // eliminate duplicate
     public void eliminateDuplicate(){
-        for(int i =0;i<NUM_KEYWORDS;i++){
-            for(int j =0;i<NUM_KEYWORDS-1;j++){
-                if(keywords[i]!=null && keywords[j] !=null){
+        for(int i = 0; i < NUM_KEYWORDS; i++){
+            for(int j = i + 1; j < NUM_KEYWORDS; j++){ 
+                if(keywords[i] != null && keywords[j] != null){
                     if(keywords[i].equalsIgnoreCase(keywords[j])){
-                        keywords[i]=null;
-
+                        keywords[j] = null; 
                     }
-
                 }
-
             }
-
         }
-
     }
 
     public int getAvailablePosKeyWords(){
@@ -373,7 +370,16 @@ public class Controller {
     public String searchLessonByKeyWords(String keyword){
         String msg="";
 
+        for(int i=0;i<SIZE ;i++){
+            if(projects[i]!=null){
+
+                msg+="\n Project: " +projects[i].getProjectName()+projects[i].searchLessonByKeyWords(keyword);
+                
+            }
         
+        }
+        
+
         return msg;
 
 

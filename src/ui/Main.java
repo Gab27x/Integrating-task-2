@@ -293,7 +293,7 @@ public class Main {
         String colabPosition = input.nextLine();
         System.out.println(colabPosition);
         
-        System.out.println("\nEnter lection learned \n Keywords must be between # example #car#");
+        System.out.println("\nEnter lection learned \nKeywords must be between # example #car#");
         String lectionLearned = input.nextLine();
         System.out.println(lectionLearned);
 
@@ -462,6 +462,7 @@ public class Main {
         String keyword ="";
         System.out.println("Enter keyword");
         keyword = input.nextLine();
+        System.out.println(controller.searchLessonByKeyWords(keyword));
     }
 
 

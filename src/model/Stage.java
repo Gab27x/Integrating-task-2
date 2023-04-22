@@ -317,8 +317,49 @@ public class Stage{
     
         return collaboratorFound;
     }
+        //case 10
+        public String searchLessonByKeyWords(String keyword){
+            String msg="";
+            for(int i =0;i<NUM_CAPSULS;i++){
+                if(capsules[i]!=null){
+                    String lectionLearned = capsules[i].getLectionLearned();
+                    if(isTheKeyWordInTheLesson(lectionLearned,keyword)){
+                        msg+= "\n \tLectionLearned: "+capsules[i].getLectionLearned();
 
+                    }
+                    
+                }
+    
+            }
+            return msg;
+    
+    }
+    public boolean isTheKeyWordInTheLesson(String lectionLearned,String keyword){
+        boolean keyWordFound = false;
+        String[] keyWordsExtracted = new String[20];
+        int numKeywords =0;
+        int startIndex = lectionLearned.indexOf("#");
+        int endIndex = lectionLearned.indexOf("#", startIndex + 1);
+        while (startIndex != -1 && endIndex != -1 && endIndex > startIndex + 1) {
+        String newKeyword = lectionLearned.substring(startIndex + 1, endIndex);
+        // Add the keyword to the array
+        keyWordsExtracted[numKeywords++] = newKeyword;     
+        // Update startIndex and endIndex for next iteration
+        startIndex = lectionLearned.indexOf("#", endIndex + 1);
+        endIndex = lectionLearned.indexOf("#", startIndex + 1);
+        
+        }
+        for(int i=0;i<20 && !keyWordFound;i++){
+            if(keyWordsExtracted[i]!=null && keyWordsExtracted[i].equalsIgnoreCase(keyword)){
+                keyWordFound= true;
 
+            }
+
+        }
+        return keyWordFound;
+    
+
+    }
 }
     
 
