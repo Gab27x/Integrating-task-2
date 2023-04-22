@@ -10,7 +10,7 @@ public class Stage{
     private int numOfManagementCapsules = 0;
     private int numOfDomainCapsules = 0;
     private int numOfExperiencesCapsules = 0;
-
+    private int[] allIds;
 
     /*
     Cuando se crea el proyecto, automáticamente se crean sus 6 etapas:
@@ -39,7 +39,7 @@ public class Stage{
         this.name = name;
         this.isActive = isActive;
         capsules = new Capsule[NUM_CAPSULS];
-
+        allIds = new int[NUM_CAPSULS];
     }
 
  
@@ -149,7 +149,16 @@ public class Stage{
 
 		return pos;
 	}
+    public boolean isIdAvailable(int id){
+        boolean idIsAvailable = true ;
+        for(int i=0;i<NUM_CAPSULS&& idIsAvailable;i++){
+            if(capsules[i]!=null && capsules[i].getId()== id){
+                idIsAvailable = false;
 
+            }
+        }
+        return idIsAvailable;
+    }
     
     /** 
      * this method allows to create a new capsule using the class constructure
@@ -167,8 +176,8 @@ public class Stage{
         int pos = capsuleAvailable();
 
         String msg="";
-        
-        if (pos != -1){
+
+        if (pos != -1 && isIdAvailable(id)){
             
             //    TECHNICAL, MANAGEMENT, DOMAIN , EXPERIENCES 
 
@@ -196,6 +205,11 @@ public class Stage{
             colabPosition, lectionLearned);
 
             msg = "Capsule registered successfully";
+            allIds[pos] = id ;
+        }
+        else if(!isIdAvailable(id)){
+            msg="The id is not available";
+
 
         }
         else{
@@ -321,10 +335,10 @@ public class Stage{
         public String searchLessonByKeyWords(String keyword){
             String msg="";
             for(int i =0;i<NUM_CAPSULS;i++){
-                if(capsules[i]!=null){
+                if(capsules[i]!=null&& capsules[i].getApprovecapsule()&&capsules[i].getIsTheCapsulePublished()){
                     String lectionLearned = capsules[i].getLectionLearned();
                     if(isTheKeyWordInTheLesson(lectionLearned,keyword)){
-                        msg+= "\n \tLectionLearned: "+capsules[i].getLectionLearned();
+                        msg+= "\n LectionLearned: "+capsules[i].getLectionLearned();
 
                     }
                     

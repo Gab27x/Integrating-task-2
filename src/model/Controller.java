@@ -145,7 +145,7 @@ public class Controller {
         boolean projectFound = false;
         for(int i=0; i<SIZE && !projectFound;i++){
             //while(projects[i] != null){
-                if(projects[i].getProjectName().equalsIgnoreCase(searchProjectByName) && projects[i]!= null ){
+                if(projects[i]!= null&&projects[i].getProjectName().equalsIgnoreCase(searchProjectByName) ){
                     projectFound = true;
                     pos=i;
     
@@ -372,8 +372,10 @@ public class Controller {
 
         for(int i=0;i<SIZE ;i++){
             if(projects[i]!=null){
-
-                msg+="\n Project: " +projects[i].getProjectName()+projects[i].searchLessonByKeyWords(keyword);
+                if(projects[i].searchLessonByKeyWords(keyword)!= ""){
+                    msg+="\n Project: " +projects[i].getProjectName()+projects[i].searchLessonByKeyWords(keyword);
+                }
+                
                 
             }
         

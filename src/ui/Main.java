@@ -53,7 +53,7 @@ public class Main {
     7 si- si
     8 si- si
     9 si - si
-    10 no
+    10 si - si (falta 1 condicion)
 
     */
     public void menu(){
@@ -126,9 +126,9 @@ public class Main {
 	}
 
     // Case 1
-        /**
+    /**
      * This method allows to create a project
-     */
+    */
 
     public void createProject(){
 
@@ -242,7 +242,7 @@ public class Main {
     // Case 2
     /**
      * This method allows to register a capsule
-     */
+    */
 
     // add next line in long strings be carefull
     public void registerCapsule(){
@@ -462,10 +462,15 @@ public class Main {
         String keyword ="";
         System.out.println("Enter keyword");
         keyword = input.nextLine();
-        System.out.println(controller.searchLessonByKeyWords(keyword));
+        String msg = controller.searchLessonByKeyWords(keyword);
+        if(msg != ""){
+            System.out.println(msg);
+        }
+        else{
+            System.out.println("No lesson has been found");
+        }
+        
     }
-
-
 
 
     
@@ -527,116 +532,9 @@ public class Main {
 
 
 
-    
-
-}
-
-/*
-crear el metodo
-String[] keywords = new String[10];
-int numKeywords = 0;
-
-public void addKeyWords(String lectionLearned){
-    int startIndex = inputString.indexOf("#");
-    int endIndex = inputString.indexOf("#", startIndex + 1);
-
-    while (startIndex != -1 && endIndex != -1 && endIndex > startIndex + 1) {
-        String keyword = lectionLearned.substring(startIndex + 1, endIndex);
-        // Add the keyword to the array
-        extractedKeywords[numKeywords++] = keyword;     
-        // Update startIndex and endIndex for next iteration
-        startIndex = inputString.indexOf("#", endIndex + 1);
-        endIndex = inputString.indexOf("#", startIndex + 1);
-
-        
-    }
-        
-
-}
-
-// atributos
-        // Create an array to store extracted keywords
-        String[] extractedKeywords = new String[10]; // assuming a maximum of 10 keywords
-        int numKeywords = 0; // counter for number of extracted keywords
-        
-        //parametro
-        String inputString = "This is a #sample string# with #keywords# to extract";
-        
-        //proceso
-        // Find the indices of "#" characters
-        int startIndex = inputString.indexOf("#");
-        int endIndex = inputString.indexOf("#", startIndex + 1);
-        
-        // Loop through the input string to extract keywords
-        while (startIndex != -1 && endIndex != -1 && endIndex > startIndex + 1) {
-            // Extract the keyword between "#" characters
-            String keyword = inputString.substring(startIndex + 1, endIndex);
-            
-            // Add the keyword to the array
-            extractedKeywords[numKeywords++] = keyword;
-            
-            // Update startIndex and endIndex for next iteration
-            startIndex = inputString.indexOf("#", endIndex + 1);
-            endIndex = inputString.indexOf("#", startIndex + 1);
-        }
-        
-        
-        // mostrar
-        // Print out the extracted keywords
-        if (numKeywords > 0) {
-            System.out.println("Input String: " + inputString);
-            System.out.println("Extracted keywords: ");
-            for (int i = 0; i < numKeywords; i++) {
-                System.out.println("- " + extractedKeywords[i]);
-            }
-        } else {
-            System.out.println("No keywords found");
-        }
-    }
 }
 
 
-// codigo original
-
-public class KeywordExtractor {
-    public static void main(String[] args) {
-        String inputString = "This is a #sample string# with #keywords# to extract";
-        
-        // Find the indices of "#" characters
-        int startIndex = inputString.indexOf("#");
-        int endIndex = inputString.indexOf("#", startIndex + 1);
-        
-        // Create an array to store extracted keywords
-        String[] extractedKeywords = new String[10]; // assuming a maximum of 10 keywords
-        int numKeywords = 0; // counter for number of extracted keywords
-        
-        // Loop through the input string to extract keywords
-        while (startIndex != -1 && endIndex != -1 && endIndex > startIndex + 1) {
-            // Extract the keyword between "#" characters
-            String keyword = inputString.substring(startIndex + 1, endIndex);
-            
-            // Add the keyword to the array
-            extractedKeywords[numKeywords++] = keyword;
-            
-            // Update startIndex and endIndex for next iteration
-            startIndex = inputString.indexOf("#", endIndex + 1);
-            endIndex = inputString.indexOf("#", startIndex + 1);
-        }
-        
-        // Print out the extracted keywords
-        if (numKeywords > 0) {
-            System.out.println("Input String: " + inputString);
-            System.out.println("Extracted keywords: ");
-            for (int i = 0; i < numKeywords; i++) {
-                System.out.println("- " + extractedKeywords[i]);
-            }
-        } else {
-            System.out.println("No keywords found");
-        }
-    }
-}
-
- */
 
 
 
