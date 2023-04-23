@@ -72,41 +72,76 @@ public class Project {
     }
 
     
+    
+    /** 
+     * @return String
+     */
     // get
-
 
     public String getProjectName() {
         return this.projectName;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getClientName() {
         return this.clientName;
     }
 
+    
+    /** 
+     * @return Calendar
+     */
     public Calendar getInitialDate() {
         return this.initialDate;
     }
 
+    
+    /** 
+     * @return Calendar
+     */
     public Calendar getFinalDate() {
         return this.finalDate;
     }
 
+    
+    /** 
+     * @return double
+     */
     public double getBudget() {
         return this.budget;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getManagerNameG() {
         return this.managerNameG;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getManagerNumberG() {
         return this.managerNumberG;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getManagerNameC() {
         return this.managerNameC;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getManagerNumberC() {
         return this.managerNumberC;
     }
@@ -306,6 +341,12 @@ public class Project {
         return msg;
         
     }
+    
+    /** 
+     * This method shows the number of capsules for every type of a project and stage in specific
+     * @param searchStageByName
+     * @return String
+     */
     //case 6
     public String showNumOfEveryCapsuleType(int searchStageByName){
         String msg = "no2";
@@ -353,6 +394,11 @@ public class Project {
 
     }
         
+    
+    /** 
+     * returns the total of capsules
+     * @return int
+     */
     public int getTotalCapsules(){
         int totalCapsules =0;
         for(int i =0;i<NUM_STAGES;i++){
@@ -365,6 +411,12 @@ public class Project {
 
     }
 
+    
+    /** 
+     * This method lists the learned lessons for a project in a specific stage
+     * @param searchStageByName
+     * @return String
+     */
     //case 7
     public String listLessonsLearnedOfProjectForAStage(int searchStageByName){
         String msg ="";
@@ -373,6 +425,13 @@ public class Project {
 
         return msg;
     }
+
+    
+    /** 
+     * This method allows to know if a collaborator has register at least one capsule
+     * @param searchCollaboratorNameInCapsules
+     * @return boolean
+     */
     //case 9
     public boolean checkCollaboratorsCapsulesInProjects(String searchCollaboratorNameInCapsules){
         boolean collaboratorFound =false;
@@ -387,6 +446,12 @@ public class Project {
     
     }
 
+    
+    /** 
+     * This method shows the lesson , the description , the project and the stage if a key word is found
+     * @param keyword
+     * @return String
+     */
     //case 10
     public String searchLessonByKeyWords(String keyword){
         String msg="";

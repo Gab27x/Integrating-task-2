@@ -45,83 +45,163 @@ public class Stage{
  
 
 
+    
+    /** 
+     * @return int
+     */
     // getters and setters
     public int getNumOfTechicalCapsules() {
         return this.numOfTechicalCapsules;
     }
 
+    
+    /** 
+     * @param numOfTechicalCapsules
+     */
     public void setNumOfTechicalCapsules(int numOfTechicalCapsules) {
         this.numOfTechicalCapsules = numOfTechicalCapsules;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getNumOfManagementCapsules() {
         return this.numOfManagementCapsules;
     }
 
+    
+    /** 
+     * @param numOfManagementCapsules
+     */
     public void setNumOfManagementCapsules(int numOfManagementCapsules) {
         this.numOfManagementCapsules = numOfManagementCapsules;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getNumOfDomainCapsules() {
         return this.numOfDomainCapsules;
     }
 
+    
+    /** 
+     * @param numOfDomainCapsules
+     */
     public void setNumOfDomainCapsules(int numOfDomainCapsules) {
         this.numOfDomainCapsules = numOfDomainCapsules;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getNumOfExperiencesCapsules() {
         return this.numOfExperiencesCapsules;
     }
 
+    
+    /** 
+     * @param numOfExperiencesCapsules
+     */
     public void setNumOfExperiencesCapsules(int numOfExperiencesCapsules) {
         this.numOfExperiencesCapsules = numOfExperiencesCapsules;
     }
 
+    
+    /** 
+     * @return StageType
+     */
     public StageType getName() {
         return this.name;
     }
 
+    
+    /** 
+     * @param name
+     */
     public void setName(StageType name) {
         this.name = name;
     }
 
+    
+    /** 
+     * @return Calendar
+     */
     public Calendar getPlanedInitialDate() {
         return this.planedInitialDate;
     }
 
+    
+    /** 
+     * @param planedInitialDate
+     */
     public void setPlanedInitialDate(Calendar planedInitialDate) {
         this.planedInitialDate = planedInitialDate;
     }
 
+    
+    /** 
+     * @return Calendar
+     */
     public Calendar getPlanedFinalDate() {
         return this.planedFinalDate;
     }
 
+    
+    /** 
+     * @param planedFinalDate
+     */
     public void setPlanedFinalDate(Calendar planedFinalDate) {
         this.planedFinalDate = planedFinalDate;
     }
 
+    
+    /** 
+     * @return Calendar
+     */
     public Calendar getRealInitialDate() {
         return this.realInitialDate;
     }
 
+    
+    /** 
+     * @param realInitialDate
+     */
     public void setRealInitialDate(Calendar realInitialDate) {
         this.realInitialDate = realInitialDate;
     }
 
+    
+    /** 
+     * @return Calendar
+     */
     public Calendar getRealFinalDate() {
         return this.realFinalDate;
     }
 
+    
+    /** 
+     * @param realFinalDate
+     */
     public void setRealFinalDate(Calendar realFinalDate) {
         this.realFinalDate = realFinalDate;
     }
 
+    
+    /** 
+     * @return boolean
+     */
     public boolean getIsActive() {
         return this.isActive;
     }
 
+    
+    /** 
+     * @param isActive
+     */
     public void setIsActive(boolean isActive) {
         this.isActive = isActive;
     }
@@ -149,6 +229,11 @@ public class Stage{
 
 		return pos;
 	}
+    
+    /** 
+     * @param id
+     * @return boolean
+     */
     public boolean isIdAvailable(int id){
         boolean idIsAvailable = true ;
         for(int i=0;i<NUM_CAPSULS&& idIsAvailable;i++){
@@ -302,6 +387,11 @@ public class Stage{
     
     }
 
+    
+    /** 
+     * This method lists the learned lessons for a project in a specific stage
+     * @return String
+     */
     //case 7
     public String listLessonsLearnedOfProjectForAStage( ){
         String msg ="no";
@@ -318,6 +408,12 @@ public class Stage{
     }
 
 
+    
+    /** 
+     * This method allows to know if a collaborator has register at le
+     * @param searchCollaboratorNameInCapsules
+     * @return boolean
+     */
     //case 9
     public boolean checkCollaboratorsCapsulesInProjects(String searchCollaboratorNameInCapsules){
         boolean collaboratorFound =false;
@@ -331,6 +427,12 @@ public class Stage{
     
         return collaboratorFound;
     }
+        
+        /** 
+         * This method shows the lesson , the description , the project and the stage if a key word is found
+         * @param keyword
+         * @return String
+         */
         //case 10
         public String searchLessonByKeyWords(String keyword){
             String msg="";
@@ -338,7 +440,7 @@ public class Stage{
                 if(capsules[i]!=null&& capsules[i].getApprovecapsule()&&capsules[i].getIsTheCapsulePublished()){
                     String lectionLearned = capsules[i].getLectionLearned();
                     if(isTheKeyWordInTheLesson(lectionLearned,keyword)){
-                        msg+= "\n LectionLearned: "+capsules[i].getLectionLearned();
+                        msg+= "\n Descripcion: "+ capsules[i].getCapsulDescription()+"\n LectionLearned: "+capsules[i].getLectionLearned();
 
                     }
                     
@@ -348,6 +450,13 @@ public class Stage{
             return msg;
     
     }
+    
+    /** 
+     * says if the keyword is in the lesseon learn
+     * @param lectionLearned
+     * @param keyword
+     * @return boolean
+     */
     public boolean isTheKeyWordInTheLesson(String lectionLearned,String keyword){
         boolean keyWordFound = false;
         String[] keyWordsExtracted = new String[20];

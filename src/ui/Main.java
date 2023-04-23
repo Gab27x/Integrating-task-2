@@ -17,6 +17,8 @@ public class Main {
 		simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
     }
 
+    
+
     public static void main(String[]args){      
         Main view = new Main();
         int option = 0 ;
@@ -38,42 +40,24 @@ public class Main {
     
     /**
      * This method shows the menu
-     */
+    */
 
     // menu
-    /*
-    
-
-    1 si-si
-    2 si-si
-    3 si-si
-    4 si-si
-    5 si-si
-    6 si-si
-    7 si- si
-    8 si- si
-    9 si - si
-    10 si - si (falta 1 condicion)
-
-    */
     public void menu(){
         System.out.println("\n0. Exit\n" +
                     "1. Create project \n"+
                     "2. Register capsule\n"+
                     "3. Approve capsule\n"+
                     "4. Publish capsule\n"+
-                    "5. Complete a stage of a project\n" +
+                    "5. Complete a stage of a project\n" + 
+
                     "6. Show how many capsules are registered for each type of capsule\n"+
-
                     "7. List the lessons learned of a project for a particular stage\n"+
-
                     "8. Give the name of the project with the most capsules recorded\n"+
 
                     "9. Inform if a collaborator (by name) has registered capsules in any project.\n" +
+                    "10. Show the situations and lessons learned from approved and published capsules, using key words\n"
 
-                    "10. Search lessons by key words in approved and published capsules\n"
-                    
-                    
                     );
 
 
@@ -81,7 +65,7 @@ public class Main {
     }
     
     /** 
-     * 
+     * this method exutes de option selected by the user
      * @param option
      * 
      */
@@ -262,7 +246,7 @@ public class Main {
         // change to next line
         input.nextLine(); // clean buffer
 
-        System.out.println("\nEnter capsule description");
+        System.out.println("\nEnter capsule description \nKeywords must be between # example #car#");
         String capsuleDescription = input.nextLine();
         System.out.println(capsuleDescription);
 
@@ -390,6 +374,9 @@ public class Main {
     }
 
     //case 6
+     /**
+     * This method shows the number of capsules for every type of a project and stage in specific
+     */
     public void showNumOfEveryCapsuleType(){
         input.nextLine(); // clean buffer
 
@@ -419,6 +406,9 @@ public class Main {
 
 
     //case 7
+    /**
+     * This method lists the learned lessons for a project in a specific stage
+     */
     public void listLessonsLearnedOfProjectForAStage(){
         input.nextLine(); // clean buffer
 
@@ -442,6 +432,9 @@ public class Main {
     }
 
     //case 8
+    /**
+     * This method allows know which project has more capsules
+     */
     public void getNameOfTheProjectWithMoreCapsules(){
 
         System.out.println(controller.getNameOfTheProjectWithMoreCapsules());
@@ -449,6 +442,9 @@ public class Main {
     }
 
     //case 9
+    /**
+     * This method allows to know if a collaborator has register at least one capsule
+     */
     public void checkCollaboratorsCapsulesInProjects(){
         input.nextLine(); // clean buffer
         System.out.println("Enter collaborator name");
@@ -457,6 +453,9 @@ public class Main {
     }
 
     //case 10
+    /**
+     * This method shows the lesson , the description , the project and the stage if a key word is found
+     */
     public void searchLessonByKeyWords(){
         input.nextLine(); // clean buffer
         String keyword ="";
@@ -528,8 +527,6 @@ public class Main {
 		return date;
 
 	}
-
-
 
 
 }

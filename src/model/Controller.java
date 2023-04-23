@@ -120,6 +120,8 @@ public class Controller {
             colabPosition, lectionLearned );
             addKeyWords(lectionLearned);
             eliminateDuplicate();
+            addKeyWords(capsuleDescription);
+            eliminateDuplicate();
         }
         else{
             msg = "project has not been Found";
@@ -234,6 +236,13 @@ public class Controller {
           
     }
 
+    
+    /** 
+     * This method shows the number of capsules for every type of a project and stage in specific
+     * @param searchProjectByName
+     * @param searchStageByName
+     * @return String
+     */
     //case 6
     public String showNumOfEveryCapsuleType(String searchProjectByName, int searchStageByName){
         String msg = "no";
@@ -252,6 +261,13 @@ public class Controller {
 
     }
     
+    
+    /** 
+     * This method lists the learned lessons for a project in a specific stage
+     * @param searchProjectByName
+     * @param searchStageByName
+     * @return String
+     */
     //case 7
     public String listLessonsLearnedOfProjectForAStage(String searchProjectByName,int searchStageByName){
         String msg ="";
@@ -268,6 +284,11 @@ public class Controller {
     }
 
 
+    
+    /** 
+     * This method allows know which project has more capsules
+     * @return String
+     */
     //case 8
     public String getNameOfTheProjectWithMoreCapsules(){
         int pos = getPosOfTheProjectWithMoreCapsules();
@@ -277,6 +298,11 @@ public class Controller {
 
     }
 
+    
+    /** 
+     * this method retunrs the position of the project with more capsules
+     * @return int
+     */
     public int getPosOfTheProjectWithMoreCapsules(){
         int projectWithMoreCapsulesPos = 0;
         int maxCapsules = 0;
@@ -305,6 +331,13 @@ public class Controller {
 
     }
 
+    
+    /** 
+     *This method allows to know if a collaborator has register at least one capsule
+
+     * @param searchCollaboratorNameInCapsules
+     * @return String
+     */
     //case 9
     public String checkCollaboratorsCapsulesInProjects(String searchCollaboratorNameInCapsules){
         String msg ="The collaborator has not registered any capsule";
@@ -320,6 +353,11 @@ public class Controller {
         return msg;
     }
 
+    
+    /** 
+     * extracts the keywords of the lection Learned
+     * @param lectionLearned
+     */
     //case 10
 
     //add key words
@@ -346,6 +384,9 @@ public class Controller {
 
     
     // eliminate duplicate
+    /**
+     * this method eliminates the duplicate keywords
+     */
     public void eliminateDuplicate(){
         for(int i = 0; i < NUM_KEYWORDS; i++){
             for(int j = i + 1; j < NUM_KEYWORDS; j++){ 
@@ -358,6 +399,11 @@ public class Controller {
         }
     }
 
+    
+    /** 
+     * returns the available position in the keywords array
+     * @return int
+     */
     public int getAvailablePosKeyWords(){
         int pos = -1;
         boolean posFound = false;
@@ -367,6 +413,12 @@ public class Controller {
         }
         return pos;
     }
+    
+    /** 
+     * This method retuns the lesson , the description , the project and the stage if a key word is found
+     * @param keyword
+     * @return String
+     */
     public String searchLessonByKeyWords(String keyword){
         String msg="";
 
